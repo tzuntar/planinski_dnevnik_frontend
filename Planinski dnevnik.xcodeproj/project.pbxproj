@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DADF6B2A84AC24AE2F6C94A8 /* Pods_Planinski_dnevnik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81408ACCA59EC6B87803FC77 /* Pods_Planinski_dnevnik.framework */; };
+		2A16664C2EB54B9100942E01 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2A16664B2EB54B9100942E01 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2AF8CE182EB5455A005D9E86 /* Planinski dnevnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Planinski dnevnik.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81408ACCA59EC6B87803FC77 /* Pods_Planinski_dnevnik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Planinski_dnevnik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		94209F4B35295540B81376F3 /* Pods-Planinski dnevnik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planinski dnevnik.release.xcconfig"; path = "Target Support Files/Pods-Planinski dnevnik/Pods-Planinski dnevnik.release.xcconfig"; sourceTree = "<group>"; };
-		C7255D3FEF0DC146A3A9C62F /* Pods-Planinski dnevnik.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planinski dnevnik.debug.xcconfig"; path = "Target Support Files/Pods-Planinski dnevnik/Pods-Planinski dnevnik.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -43,28 +40,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DADF6B2A84AC24AE2F6C94A8 /* Pods_Planinski_dnevnik.framework in Frameworks */,
+				2A16664C2EB54B9100942E01 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09FF4E7EDC9D752C5C5D49D1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				81408ACCA59EC6B87803FC77 /* Pods_Planinski_dnevnik.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		2AF8CE0F2EB5455A005D9E86 = {
 			isa = PBXGroup;
 			children = (
 				2AF8CE1A2EB5455A005D9E86 /* Planinski dnevnik */,
 				2AF8CE192EB5455A005D9E86 /* Products */,
-				94313D9D173B3E1102BBFAA8 /* Pods */,
-				09FF4E7EDC9D752C5C5D49D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,16 +63,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		94313D9D173B3E1102BBFAA8 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C7255D3FEF0DC146A3A9C62F /* Pods-Planinski dnevnik.debug.xcconfig */,
-				94209F4B35295540B81376F3 /* Pods-Planinski dnevnik.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -93,11 +70,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2AF8CE2B2EB5455C005D9E86 /* Build configuration list for PBXNativeTarget "Planinski dnevnik" */;
 			buildPhases = (
-				256C68AFFA826AAEDDE0CFB3 /* [CP] Check Pods Manifest.lock */,
 				2AF8CE142EB5455A005D9E86 /* Sources */,
 				2AF8CE152EB5455A005D9E86 /* Frameworks */,
 				2AF8CE162EB5455A005D9E86 /* Resources */,
-				DAF55552009BC99BC7AD5CD6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +110,9 @@
 			);
 			mainGroup = 2AF8CE0F2EB5455A005D9E86;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2A16664D2EB54BAE00942E01 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2AF8CE192EB5455A005D9E86 /* Products */;
 			projectDirPath = "";
@@ -155,48 +133,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		256C68AFFA826AAEDDE0CFB3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Planinski dnevnik-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DAF55552009BC99BC7AD5CD6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Planinski dnevnik/Pods-Planinski dnevnik-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Planinski dnevnik/Pods-Planinski dnevnik-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Planinski dnevnik/Pods-Planinski dnevnik-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		2AF8CE142EB5455A005D9E86 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -210,7 +146,6 @@
 /* Begin XCBuildConfiguration section */
 		2AF8CE2C2EB5455C005D9E86 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C7255D3FEF0DC146A3A9C62F /* Pods-Planinski dnevnik.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -243,7 +178,6 @@
 		};
 		2AF8CE2D2EB5455C005D9E86 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94209F4B35295540B81376F3 /* Pods-Planinski dnevnik.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -415,6 +349,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A16664A2EB54B9100942E01 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		2A16664D2EB54BAE00942E01 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A16664B2EB54B9100942E01 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A16664A2EB54B9100942E01 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2AF8CE102EB5455A005D9E86 /* Project object */;
 }
