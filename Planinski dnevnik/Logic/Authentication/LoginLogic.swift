@@ -4,6 +4,7 @@ import Alamofire
 protocol LoginDelegate {
     func didLogInUser(_ session: UserSession)
     func didLoginFailWithError(_ error: Error)
+    
 }
 
 struct LoginEntry: Encodable {
@@ -21,6 +22,7 @@ enum LoginError: Error, CustomStringConvertible {
     case serverSideError
     case dataMissing
     case unexpected(code: Int)
+    
 
     public var description: String {
         switch self {
@@ -39,6 +41,7 @@ enum LoginError: Error, CustomStringConvertible {
 class LoginLogic {
     var delegate: LoginDelegate?
     
+
     func attemptLogin(with loginEntry: LoginEntry) {
         AF.request(APIURL + "/auth/login",
                    method: .post,
