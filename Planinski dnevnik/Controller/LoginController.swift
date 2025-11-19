@@ -29,18 +29,22 @@ extension LoginController: LoginDelegate {
     func didLogInUser(_ session: UserSession) {
         AuthManager.shared.startSession(session)
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let feedVC = mainStoryboard.instantiateViewController(withIdentifier: "FeedVC")
+        let feedVC = mainStoryboard.instantiateViewController(withIdentifier: "swipe-vc")
         feedVC.modalPresentationStyle = .fullScreen
         present(feedVC, animated: true, completion: nil)
     }
     
     func didLoginFailWithError(_ error: any Error) {
-        if let error = error as? LoginError {   // this is the swift way of safely type casting
-            WarningAlert().showWarning(withTitle: "Napaka",
-                                       withDescription: error.description)
-        } else {
-            WarningAlert().showWarning(withTitle: "Napaka",
-                                       withDescription: error.localizedDescription)
+        var message = error.localizedDescription;
+        if let error = error as? LoginError {
+            message = error.description
         }
+        let alert = UIAlertController(
+            title: "Napaka",
+            message: message,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
     }
 }

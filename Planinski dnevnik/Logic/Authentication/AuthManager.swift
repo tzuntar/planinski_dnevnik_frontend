@@ -35,7 +35,7 @@ class AuthManager {
     func authenticate() -> Bool {
         guard let token = session?.token else { return false }
         do {
-            let jwt = try decode(jwt: token.accessToken)
+            let jwt = try decode(jwt: token.access_token)
             let expiration = jwt.expiresAt?.timeIntervalSinceNow ?? 0
             if expiration > 0 { // still valid
                 return true
@@ -54,7 +54,7 @@ class AuthManager {
      */
     private func refreshAccessToken() -> Bool {
         guard let session = session else { return false }
-        let params = ["token": session.token.refreshToken]
+        let params = ["token": session.token.refresh_token]
         let headers: HTTPHeaders = ["Content-Type": "application/json"]
         
         AF.request(refreshURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
@@ -92,6 +92,6 @@ class AuthManager {
             return nil
         }
         guard let session = session else { return nil }
-        return [.authorization(bearerToken: session.token.accessToken)]
+        return [.authorization(bearerToken: session.token.access_token)]
     }
 }

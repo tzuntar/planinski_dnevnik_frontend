@@ -10,12 +10,12 @@ protocol RegisterDelegate {
 struct RegisterEntry: Encodable{
     let email:String
     let password:String
-    let username:String
+    let name:String
     
-    init(email: String, password: String, username: String) {
+    init(email: String, password: String, name: String) {
         self.email = email
         self.password = password
-        self.username = username
+        self.name = name    // more bit name ne username
     }
 }
 
