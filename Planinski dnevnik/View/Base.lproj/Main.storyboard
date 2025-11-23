@@ -3,10 +3,15 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Shrikhand.ttf">
+            <string>Shrikhand-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Main Swipe Navigation View Controller-->
         <scene sceneID="hob-nd-q7y">
@@ -24,21 +29,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTW-vl-n6c">
-                                <rect key="frame" x="48" y="107" width="29" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moji vzponi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgv-bv-BZn">
+                                <rect key="frame" x="20" y="118" width="353" height="46"/>
+                                <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="31"/>
+                                <color key="textColor" name="Text Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qb0-kP-hFm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Page Background"/>
+                        <constraints>
+                            <constraint firstItem="Pgv-bv-BZn" firstAttribute="top" secondItem="Qb0-kP-hFm" secondAttribute="top" id="618-hC-18q"/>
+                            <constraint firstItem="Qb0-kP-hFm" firstAttribute="trailing" secondItem="Pgv-bv-BZn" secondAttribute="trailing" constant="20" id="RXX-6M-JHq"/>
+                            <constraint firstItem="Pgv-bv-BZn" firstAttribute="leading" secondItem="Qb0-kP-hFm" secondAttribute="leading" constant="20" id="YZq-f3-j6b"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgW-Ub-XIy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-648" y="82"/>
+            <point key="canvasLocation" x="-648.09160305343505" y="81.690140845070431"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="GSa-6e-jzs">
@@ -48,16 +57,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sa-O8-tad">
-                                <rect key="frame" x="67" y="101" width="38" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planinski dnevnik" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaP-rN-6tf">
+                                <rect key="frame" x="0.0" y="118" width="393" height="46"/>
+                                <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="31"/>
+                                <color key="textColor" name="Text Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n8Z-JV-0Zf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Page Background"/>
+                        <constraints>
+                            <constraint firstItem="OaP-rN-6tf" firstAttribute="trailing" secondItem="n8Z-JV-0Zf" secondAttribute="trailing" id="N0G-xs-ITD"/>
+                            <constraint firstItem="OaP-rN-6tf" firstAttribute="top" secondItem="n8Z-JV-0Zf" secondAttribute="top" id="RgB-TG-Sj0"/>
+                            <constraint firstItem="OaP-rN-6tf" firstAttribute="leading" secondItem="n8Z-JV-0Zf" secondAttribute="leading" id="qT5-c4-uHD"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mib-HS-DRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -72,16 +85,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogq-QV-Y4T">
-                                <rect key="frame" x="67" y="105" width="49" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moj profil" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ac-dV-bHe">
+                                <rect key="frame" x="20" y="118" width="353" height="46"/>
+                                <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="31"/>
+                                <color key="textColor" name="Text Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ESY-fY-WA1"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Page Background"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6Ac-dV-bHe" secondAttribute="trailing" constant="20" id="QLb-h1-HkF"/>
+                            <constraint firstItem="6Ac-dV-bHe" firstAttribute="leading" secondItem="ESY-fY-WA1" secondAttribute="leading" constant="20" id="Yc0-xB-5XO"/>
+                            <constraint firstItem="6Ac-dV-bHe" firstAttribute="top" secondItem="ESY-fY-WA1" secondAttribute="top" id="coi-4P-5hT"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4P-Zl-PSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -90,8 +107,11 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="Page Background">
+            <color red="0.96823311725323002" green="0.98999999999999999" blue="0.95039999999999991" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text Color">
+            <color red="0.076128011697760026" green="0.16904892287887893" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
