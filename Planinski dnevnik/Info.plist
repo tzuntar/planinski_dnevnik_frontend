@@ -4,8 +4,8 @@
 <dict>
 	<key>Fonts provided by application123</key>
 	<array>
-		<string>Fonts/Shrikhand.ttf</string>
-		<string>Fonts/Outfit.ttf</string>
+		<string>Shrikhand.ttf</string>
+		<string>Outfit.ttf</string>
 	</array>
 	<key>DEFAULT_SERVER_IP</key>
 	<string>http://$(DEFAULT_SERVER_IP)</string>

@@ -20,3 +20,11 @@ class User: Codable {
     //let bio: String?
     //let photo_uri: String?
 }
+
+class Post: Codable {
+    let id: Int
+    let title: String
+    let description: String
+    let user: String
+    let photoUrl: String
+}
