@@ -37,24 +37,52 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AV9-73-K6z">
                                         <rect key="frame" x="0.0" y="148.66666666666669" width="313" height="43"/>
                                         <string key="text">Prijavi se v svoj račun in deli svoje
-podvige s prijatelji</string>
+planinarske podvige</string>
                                         <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="17"/>
                                         <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="LNA-De-sXx">
-                                        <rect key="frame" x="0.0" y="269" width="313" height="98"/>
+                                        <rect key="frame" x="0.0" y="264" width="313" height="108"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-pošta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2d-HG-t9g">
-                                                <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="SD9-mf-xdF"/>
+                                                </constraints>
                                                 <color key="textColor" name="Text Color"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                        <color key="value" name="Text Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Geslo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VBA-tY-OIS">
-                                                <rect key="frame" x="0.0" y="64" width="313" height="34"/>
+                                                <rect key="frame" x="0.0" y="70" width="313" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="8sY-iT-C1V"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                                        <color key="value" name="Text Color"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -68,16 +96,24 @@ podvige s prijatelji</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVE-kf-NrQ">
-                                                <rect key="frame" x="174.33333333333337" y="0.0" width="138.66666666666663" height="35.666666666666664"/>
+                                                <rect key="frame" x="168" y="0.0" width="145" height="35.666666666666664"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Ustvari ga zdaj">
-                                                    <fontDescription key="titleFontDescription" name="Outfit-Thin_SemiBold" family="Outfit" pointSize="17"/>
+                                                <buttonConfiguration key="configuration" style="plain">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Ustvari ga tukaj">
+                                                            <attributes>
+                                                                <font key="NSFont" size="17" name="Outfit-Thin_SemiBold"/>
+                                                                <integer key="NSUnderline" value="1"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="Fu8-d1-8JS" kind="presentation" id="ydf-db-mKJ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="tintColor" name="Text Color"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNL-cO-9Tr">
                                         <rect key="frame" x="0.0" y="595.33333333333337" width="313" height="35.666666666666629"/>
@@ -85,6 +121,7 @@ podvige s prijatelji</string>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Naprej">
                                             <fontDescription key="titleFontDescription" name="Outfit-Thin_SemiBold" family="Outfit" pointSize="17"/>
+                                            <color key="baseBackgroundColor" name="Text Color"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="loginButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XVF-va-DcQ"/>
@@ -228,10 +265,10 @@ podvige s prijatelji</string>
     </scenes>
     <resources>
         <namedColor name="Page Background">
-            <color red="0.96823311725323002" green="0.98999999999999999" blue="0.95039999999999991" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96799999475479126" green="0.99000000953674316" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Text Color">
-            <color red="0.076128011697760026" green="0.16904892287887893" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.075999997556209564" green="0.16899999976158142" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

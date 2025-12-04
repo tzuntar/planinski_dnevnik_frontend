@@ -30,7 +30,7 @@ class FeedLogic {
     
     func retrievePosts() {
         guard let authHeaders = AuthManager.shared.getAuthHeaders() else { return }
-        AF.request("\(APIURL)/feed/posts", headers: authHeaders)
+        AF.request("\(APIURL)/feed/", headers: authHeaders)
             .validate()
             .responseDecodable(of: [Post].self) { response in
                 if let safeResponse = response.value {
