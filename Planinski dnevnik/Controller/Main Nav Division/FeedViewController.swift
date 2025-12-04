@@ -37,13 +37,14 @@ class FeedViewController: UIViewController {
     }
     
     @IBAction func navToLogPressed() {
-        if let parentVC = self.parent as? HomeSwipeController {
+        // yes, it's technically its parent. yes, it's two levels higher in the hierarchy.
+        if let parentVC = self.parent?.parent?.parent as? HomeSwipeController {
             parentVC.moveToPage(HomeSwipeController.PagesIndex.LogPage.rawValue, animated: true)
         }
     }
 
     @IBAction func navToProfilePressed() {
-        if let parentVC = self.parent as? HomeSwipeController {
+        if let parentVC = self.parent?.parent?.parent as? HomeSwipeController {
             parentVC.moveToPage(HomeSwipeController.PagesIndex.ProfilePage.rawValue, animated: true)
         }
     }
