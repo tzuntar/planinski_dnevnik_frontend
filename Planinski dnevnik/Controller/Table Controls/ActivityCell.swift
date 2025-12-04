@@ -9,9 +9,18 @@ import UIKit
 
 class ActivityCell: UITableViewCell {
 
+    @IBOutlet weak var activityTitle: UILabel!
+    @IBOutlet weak var activityLocation: UILabel!
+    @IBOutlet weak var activityHeight: UILabel!
+    @IBOutlet weak var activityDate: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func loadPost(_ post: Post) {
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

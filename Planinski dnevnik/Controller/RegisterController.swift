@@ -94,7 +94,7 @@ class RegisterController: UIViewController{
             errorLabel.text = ""
         }
     }
-    
+
 }
 
 extension RegisterController : RegisterDelegate {
