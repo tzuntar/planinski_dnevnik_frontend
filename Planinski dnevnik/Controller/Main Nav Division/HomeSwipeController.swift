@@ -1,7 +1,7 @@
 // Handles swipe left-right to navigate between screens
 import UIKit
 
-class MainSwipeNavigationViewController: EZSwipeController {
+class HomeSwipeController: EZSwipeController {
 
     override func setupView() {
         super.setupView()
@@ -9,9 +9,15 @@ class MainSwipeNavigationViewController: EZSwipeController {
         datasource = self
     }
 
+    enum PagesIndex: Int {
+        case LogPage = 0
+        case FeedPage = 1
+        case ProfilePage = 2
+    }
+
 }
 
-extension MainSwipeNavigationViewController: EZSwipeControllerDataSource {
+extension HomeSwipeController: EZSwipeControllerDataSource {
     func viewControllerData() -> [UIViewController] {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 

@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Main Swipe Navigation View Controller-->
+        <!--Home Swipe Controller-->
         <scene sceneID="hob-nd-q7y">
             <objects>
-                <viewController storyboardIdentifier="swipe-vc" id="G0x-lv-68f" customClass="MainSwipeNavigationViewController" customModule="Planinski_dnevnik" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController storyboardIdentifier="swipe-vc" id="G0x-lv-68f" customClass="HomeSwipeController" customModule="Planinski_dnevnik" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXb-4i-pNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="30" y="-712"/>
@@ -58,31 +58,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planinski dnevnik" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaP-rN-6tf">
-                                <rect key="frame" x="0.0" y="117.99999999999999" width="393" height="45.333333333333329"/>
-                                <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="31"/>
-                                <color key="textColor" name="Text Color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mCB-WR-f0A">
+                                <rect key="frame" x="0.0" y="118" width="393" height="45"/>
+                                <subviews>
+                                    <button toolTip="Dnevnik" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTK-9R-dBz">
+                                        <rect key="frame" x="0.0" y="0.0" width="76" height="45"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Log Navigate Left"/>
+                                        <connections>
+                                            <action selector="navToLogPressed" destination="rqm-Lc-kEd" eventType="touchUpInside" id="0lD-tA-ulG"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planinski dnevnik" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaP-rN-6tf">
+                                        <rect key="frame" x="80.333333333333329" y="5" width="232.33333333333337" height="35"/>
+                                        <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="24"/>
+                                        <color key="textColor" name="Text Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button toolTip="Profil" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sa6-9d-xvd">
+                                        <rect key="frame" x="317" y="0.0" width="76" height="45"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Profile Navigate Right"/>
+                                        <connections>
+                                            <action selector="navToProfilePressed" destination="rqm-Lc-kEd" eventType="touchUpInside" id="xMT-4K-ucl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tMU-Sm-ApS">
-                                <rect key="frame" x="20" y="183.33333333333331" width="353" height="600.66666666666674"/>
+                                <rect key="frame" x="20" y="169" width="353" height="615"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n8Z-JV-0Zf"/>
                         <color key="backgroundColor" name="Page Background"/>
                         <constraints>
+                            <constraint firstItem="mCB-WR-f0A" firstAttribute="leading" secondItem="n8Z-JV-0Zf" secondAttribute="leading" id="0cf-wF-zhI"/>
                             <constraint firstItem="n8Z-JV-0Zf" firstAttribute="trailing" secondItem="tMU-Sm-ApS" secondAttribute="trailing" constant="20" id="22y-Xb-e3d"/>
-                            <constraint firstItem="OaP-rN-6tf" firstAttribute="trailing" secondItem="n8Z-JV-0Zf" secondAttribute="trailing" id="N0G-xs-ITD"/>
+                            <constraint firstItem="mCB-WR-f0A" firstAttribute="top" secondItem="n8Z-JV-0Zf" secondAttribute="top" id="4Ps-iV-9aT"/>
+                            <constraint firstItem="n8Z-JV-0Zf" firstAttribute="trailing" secondItem="mCB-WR-f0A" secondAttribute="trailing" id="R8t-S9-Llh"/>
                             <constraint firstItem="n8Z-JV-0Zf" firstAttribute="bottom" secondItem="tMU-Sm-ApS" secondAttribute="bottom" id="R9h-rQ-TeU"/>
-                            <constraint firstItem="OaP-rN-6tf" firstAttribute="top" secondItem="n8Z-JV-0Zf" secondAttribute="top" id="RgB-TG-Sj0"/>
+                            <constraint firstItem="tMU-Sm-ApS" firstAttribute="top" secondItem="mCB-WR-f0A" secondAttribute="bottom" constant="6" id="VgK-cM-wdj"/>
                             <constraint firstItem="tMU-Sm-ApS" firstAttribute="leading" secondItem="n8Z-JV-0Zf" secondAttribute="leading" constant="20" id="kGA-zC-B0p"/>
-                            <constraint firstItem="OaP-rN-6tf" firstAttribute="leading" secondItem="n8Z-JV-0Zf" secondAttribute="leading" id="qT5-c4-uHD"/>
-                            <constraint firstItem="tMU-Sm-ApS" firstAttribute="top" secondItem="OaP-rN-6tf" secondAttribute="bottom" constant="20" id="vSM-xg-9ng"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="postsTable" destination="tMU-Sm-ApS" id="Jac-ZL-szt"/>
+                        <outlet property="postsTable" destination="tMU-Sm-ApS" id="dH0-IB-DjE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mib-HS-DRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -119,6 +140,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Log Navigate Left" width="52" height="31"/>
+        <image name="Profile Navigate Right" width="52" height="31"/>
         <namedColor name="Page Background">
             <color red="0.96799999475479126" green="0.99000000953674316" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

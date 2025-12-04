@@ -25,6 +25,7 @@ class Post: Codable {
     let id: Int
     let title: String
     let description: String
-    let user: String
-    let photoUrl: String
+    let user_id: Int
+    let user_name: String
+    let photo_url: String
 }

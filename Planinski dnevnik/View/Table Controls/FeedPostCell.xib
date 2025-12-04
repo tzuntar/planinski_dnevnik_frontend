@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,22 +25,22 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xme-dN-jy4">
                                 <rect key="frame" x="0.0" y="251" width="393" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="339-S5-KXW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="339-S5-KXW">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="23.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Outfit Thin Medium" family="Outfit Thin Medium" pointSize="17"/>
+                                        <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Post Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CE-4J-aTl">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Post Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CE-4J-aTl">
                                         <rect key="frame" x="0.0" y="28.333333333333314" width="393" height="23.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Outfit Thin Medium" family="Outfit Thin Medium" pointSize="15"/>
+                                        <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZo-er-vTb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZo-er-vTb">
                                         <rect key="frame" x="0.0" y="56.666666666666693" width="393" height="23.333333333333336"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Outfit Thin Medium" family="Outfit Thin Medium" pointSize="17"/>
+                                        <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -50,6 +51,7 @@
                         </subviews>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" name="Page Background"/>
                 <constraints>
                     <constraint firstItem="7oK-Tv-iXJ" firstAttribute="leading" secondItem="AMO-ZD-m2Y" secondAttribute="leading" id="0Zh-67-bJA"/>
                     <constraint firstAttribute="trailing" secondItem="7oK-Tv-iXJ" secondAttribute="trailing" id="GsS-Ln-uzj"/>
@@ -58,12 +60,20 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="PostUserLabel" destination="nZo-er-vTb" id="fRx-e8-w5S"/>
                 <outlet property="postDescriptionLabel" destination="7CE-4J-aTl" id="paV-17-Hom"/>
                 <outlet property="postImageView" destination="0Lk-Kq-F8I" id="Zqj-9k-AA6"/>
                 <outlet property="postTitleLabel" destination="339-S5-KXW" id="kiZ-ZR-XLh"/>
+                <outlet property="postUserLabel" destination="nZo-er-vTb" id="fRx-e8-w5S"/>
             </connections>
             <point key="canvasLocation" x="130.53435114503816" y="88.380281690140848"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="Page Background">
+            <color red="0.96799999475479126" green="0.99000000953674316" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Text Color">
+            <color red="0.075999997556209564" green="0.16899999976158142" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

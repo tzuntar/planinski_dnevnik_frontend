@@ -5,7 +5,7 @@ class FeedViewController: UIViewController {
     var feedLogic: FeedLogic?
     
     var posts: [Post]?
-    
+
     @IBOutlet weak var postsTable: UITableView!
 
     override func viewDidLoad() {
@@ -36,6 +36,17 @@ class FeedViewController: UIViewController {
         }
     }
     
+    @IBAction func navToLogPressed() {
+        if let parentVC = self.parent as? HomeSwipeController {
+            parentVC.moveToPage(HomeSwipeController.PagesIndex.LogPage.rawValue, animated: true)
+        }
+    }
+
+    @IBAction func navToProfilePressed() {
+        if let parentVC = self.parent as? HomeSwipeController {
+            parentVC.moveToPage(HomeSwipeController.PagesIndex.ProfilePage.rawValue, animated: true)
+        }
+    }
 }
 
 // MARK: - Feed Delegate
