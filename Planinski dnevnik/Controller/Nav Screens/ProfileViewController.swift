@@ -19,6 +19,12 @@ class ProfileViewController : UIViewController {
     
     }
     
+    @IBAction func navToFeedPressed() {
+        // yes, it's technically its parent. yes, it's two levels higher in the hierarchy.
+        if let parentVC = self.parent?.parent?.parent as? HomeSwipeController {
+            parentVC.moveToPage(HomeSwipeController.PagesIndex.FeedPage.rawValue, animated: true)
+        }
+    }
 }
 
 extension ProfileViewController: UserAccountDelegate {

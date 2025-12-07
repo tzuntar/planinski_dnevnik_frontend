@@ -6,8 +6,8 @@
 	<string>http://$(DEFAULT_SERVER_IP)</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Fonts/Shrikhand.ttf</string>
-		<string>Fonts/Outfit.ttf</string>
+		<string>Shrikhand.ttf</string>
+		<string>Outfit.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
