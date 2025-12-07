@@ -10,7 +10,6 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Outfit.ttf">
-            <string>Outfit-Thin_Black</string>
             <string>Outfit-Thin_Bold</string>
             <string>Outfit-Thin_Regular</string>
         </array>
@@ -38,27 +37,54 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iLf-eG-LCX">
                                 <rect key="frame" x="30" y="89" width="333" height="694"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dodaj vzpon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h17-hO-PBk">
-                                        <rect key="frame" x="0.0" y="0.0" width="333" height="30.333333333333332"/>
-                                        <fontDescription key="fontDescription" name="Outfit-Thin_Black" family="Outfit" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h3P-DA-0ey">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dodaj vzpon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h17-hO-PBk">
+                                                <rect key="frame" x="46" y="0.0" width="287" height="40"/>
+                                                <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="24"/>
+                                                <color key="textColor" name="Text Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="479-p6-Bmd">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="7KW-cR-66R"/>
+                                                    <constraint firstAttribute="width" constant="40" id="HiN-gI-ZFZ"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="sfr-q1-oyP"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="Back Icon"/>
+                                                <connections>
+                                                    <action selector="backButtonPressed" destination="5eO-8E-a7V" eventType="touchUpInside" id="GcP-oa-LH9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="479-p6-Bmd" firstAttribute="leading" secondItem="h3P-DA-0ey" secondAttribute="leading" id="1Ck-3y-iwC"/>
+                                            <constraint firstItem="h17-hO-PBk" firstAttribute="leading" secondItem="479-p6-Bmd" secondAttribute="trailing" constant="6" id="85m-QG-cdG"/>
+                                            <constraint firstAttribute="bottom" secondItem="h17-hO-PBk" secondAttribute="bottom" id="Fgj-rd-DwX"/>
+                                            <constraint firstItem="h17-hO-PBk" firstAttribute="top" secondItem="h3P-DA-0ey" secondAttribute="top" id="S6f-AL-YHY"/>
+                                            <constraint firstAttribute="trailing" secondItem="h17-hO-PBk" secondAttribute="trailing" id="UwP-Fy-TEp"/>
+                                            <constraint firstAttribute="bottom" secondItem="479-p6-Bmd" secondAttribute="bottom" id="ZoM-bT-7yH"/>
+                                            <constraint firstItem="479-p6-Bmd" firstAttribute="top" secondItem="h3P-DA-0ey" secondAttribute="top" id="oo1-5z-tMW"/>
+                                        </constraints>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fKB-5t-JaB">
-                                        <rect key="frame" x="0.0" y="72.333333333333343" width="333" height="66.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="83" width="333" height="62.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ime pohoda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9a-dq-gbr">
-                                                <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="16.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sprehod na Mojstrano" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iQc-YU-YfK">
-                                                <rect key="frame" x="0.0" y="30.333333333333314" width="333" height="36"/>
+                                                <rect key="frame" x="0.0" y="26.666666666666657" width="333" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="WQ7-Zt-GsH"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                                                 <connections>
                                                     <action selector="textFieldTextChanged:" destination="5eO-8E-a7V" eventType="editingDidEnd" id="Wdw-eb-EjP"/>
@@ -67,20 +93,20 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fA0-Le-aB7">
-                                        <rect key="frame" x="0.0" y="180.33333333333331" width="333" height="66.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="188.33333333333331" width="333" height="62.666666666666657"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Na kratko opiši svoj pohod" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmr-xt-OA7">
-                                                <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="16.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sonček sveti, jaz pa že na vse zgodaj" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mbf-xC-7YJ">
-                                                <rect key="frame" x="0.0" y="30.333333333333371" width="333" height="36"/>
+                                                <rect key="frame" x="0.0" y="26.666666666666686" width="333" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="YVh-Ds-k7v"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                                 <connections>
                                                     <action selector="textFieldTextChanged:" destination="5eO-8E-a7V" eventType="editingDidEnd" id="Ocf-Tg-UiS"/>
@@ -89,20 +115,20 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="yuU-fo-OA2">
-                                        <rect key="frame" x="0.0" y="288.66666666666669" width="333" height="65.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="294" width="333" height="61.666666666666686"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ime vrha, na katerega si se povzpel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ank-Ls-3Pd">
-                                                <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="16.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mojstrana" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abX-WT-l03">
-                                                <rect key="frame" x="0.0" y="29.333333333333314" width="333" height="36"/>
+                                                <rect key="frame" x="0.0" y="25.666666666666686" width="333" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="tMu-Er-e7n"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" textContentType="new-password"/>
                                                 <connections>
                                                     <action selector="textFieldTextChanged:" destination="5eO-8E-a7V" eventType="editingDidEnd" id="sz5-IP-oCU"/>
@@ -111,16 +137,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sgl-d0-mag">
-                                        <rect key="frame" x="0.0" y="395.66666666666669" width="333" height="216.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="398.33333333333331" width="333" height="212.66666666666669"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priloži še eno fotko z vzpona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjc-B2-ueY">
-                                                <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pripni še fotko z vzpona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjc-B2-ueY">
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="16.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalHuggingPriority="240" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="USY-mZ-wDh">
-                                                <rect key="frame" x="0.0" y="30.333333333333314" width="333" height="186"/>
+                                                <rect key="frame" x="0.0" y="26.666666666666686" width="333" height="186"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssp-7E-UMx">
                                                         <rect key="frame" x="61" y="0.0" width="211" height="30"/>
@@ -153,7 +179,7 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Dodaj vzpon">
-                                            <fontDescription key="titleFontDescription" name="Outfit-Thin_Bold" family="Outfit" pointSize="16"/>
+                                            <fontDescription key="titleFontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="addHikePressed:" destination="5eO-8E-a7V" eventType="touchUpInside" id="QBJ-og-7Yz"/>
@@ -201,7 +227,7 @@
                                         <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" toolTip="Nazaj" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ph1-hh-I6f">
+                                    <button toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ph1-hh-I6f">
                                         <rect key="frame" x="287" y="0.0" width="76" height="45"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Navigate Right to Feed"/>
@@ -343,7 +369,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBz-MF-8Py">
                                 <rect key="frame" x="10" y="118" width="373" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" toolTip="Nazaj" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRk-b1-anj">
+                                    <button toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRk-b1-anj">
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="45"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Navigate Left to Feed"/>
@@ -455,6 +481,7 @@ Gore, potke, dobra družba in termoska kave.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Back Icon" width="34" height="34"/>
         <image name="Log Navigate Left" width="52" height="31"/>
         <image name="Navigate Left to Feed" width="52" height="31"/>
         <image name="Navigate Right to Feed" width="52" height="31"/>

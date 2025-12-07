@@ -20,6 +20,10 @@ class AddHikeController : UIViewController {
         hikeLogic = HikeLogic(delegate: self)
         initPhotoPicker()
     }
+
+    @IBAction func backButtonPressed() {
+        self.dismiss(animated: true)
+    }
     
     @IBAction func showPhotoPickerPressed() {
         showPhotoPicker()
