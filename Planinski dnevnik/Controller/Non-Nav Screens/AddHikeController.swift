@@ -18,6 +18,10 @@ class AddHikeController : UIViewController {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         hikeLogic = HikeLogic(delegate: self)
+        
+        selectedPhotoView.isUserInteractionEnabled = true
+        selectedPhotoView.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                      action: #selector(selectedPhotoPressed)))
         initPhotoPicker()
     }
 
@@ -25,7 +29,7 @@ class AddHikeController : UIViewController {
         self.dismiss(animated: true)
     }
     
-    @IBAction func showPhotoPickerPressed() {
+    @objc func selectedPhotoPressed() {
         showPhotoPicker()
     }
 
