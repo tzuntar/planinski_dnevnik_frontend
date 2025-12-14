@@ -5,7 +5,7 @@ class AddHikeController : UIViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var peakNameField: UITextField!
-    @IBOutlet weak var selectPhotoButton: UIButton!
+    @IBOutlet weak var publicPostToggle: UISwitch!
     @IBOutlet weak var selectedPhotoView: UIImageView!
     @IBOutlet weak var addHikeButton: UIButton!
     
@@ -19,6 +19,7 @@ class AddHikeController : UIViewController {
         hideKeyboardWhenTappedAround()
         hikeLogic = HikeLogic(delegate: self)
         
+        addHikeButton.isEnabled = false
         selectedPhotoView.isUserInteractionEnabled = true
         selectedPhotoView.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                       action: #selector(selectedPhotoPressed)))
@@ -42,10 +43,12 @@ class AddHikeController : UIViewController {
         nameField.isEnabled = false
         descriptionField.isEnabled = false
         peakNameField.isEnabled = false
-        selectPhotoButton.isEnabled = false
+        publicPostToggle.isEnabled = false
+        selectedPhotoView.isUserInteractionEnabled = false
         let entry = HikeEntry(name: name,
                               description: description,
                               peak: peak,
+                              is_public: publicPostToggle.isOn,
                               user_id: AuthManager.shared.session!.user.id)
         guard let selectedPhoto = selectedPhoto else { return }
         hikeLogic!.postHike(with: entry, photo: selectedPhoto)
@@ -106,6 +109,7 @@ extension AddHikeController : AddHikeDelegate {
         nameField.isEnabled = true
         descriptionField.isEnabled = true
         peakNameField.isEnabled = true
-        selectPhotoButton.isEnabled = true
+        publicPostToggle.isEnabled = true
+        selectedPhotoView.isUserInteractionEnabled = true
     }
 }

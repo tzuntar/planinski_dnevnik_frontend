@@ -11,6 +11,7 @@ struct HikeEntry: Encodable {
     let name: String?
     let description: String?
     let peak: String?
+    let is_public: Bool?
     let user_id: Int?
 }
 
