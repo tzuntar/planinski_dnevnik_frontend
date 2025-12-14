@@ -253,12 +253,12 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IF2-B8-2Qz">
-                                <rect key="frame" x="20" y="215" width="353" height="569"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="20" y="214.66666666666669" width="353" height="569.33333333333326"/>
+                                <color key="backgroundColor" name="Page Background"/>
                                 <color key="separatorColor" name="Page Background"/>
                                 <color key="sectionIndexBackgroundColor" name="Page Background"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" toolTip="Dodaj vnos" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKQ-aF-8br">
+                            <button toolTip="Dodaj vnos" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKQ-aF-8br">
                                 <rect key="frame" x="303" y="714" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="9Tn-CD-01g"/>
@@ -271,7 +271,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opravili niste še nobenega vzpona." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hx-hg-bL8">
-                                <rect key="frame" x="20" y="173" width="353" height="22"/>
+                                <rect key="frame" x="20" y="173" width="353" height="21.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -295,6 +295,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="noDataLabel" destination="6hx-hg-bL8" id="HYQ-TB-joX"/>
                         <outlet property="postsTable" destination="IF2-B8-2Qz" id="80q-J3-OJW"/>
                     </connections>
                 </viewController>
@@ -359,6 +360,7 @@
                     </view>
                     <connections>
                         <outlet property="postsTable" destination="tMU-Sm-ApS" id="Jac-ZL-szt"/>
+                        <segue destination="I2K-3Q-lZA" kind="showDetail" identifier="ShowUserProfile" id="puO-Tx-cEa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mib-HS-DRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -390,7 +392,7 @@
                                         <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" toolTip="Odjava" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-NQ-JTB">
+                                    <button toolTip="Odjava" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-NQ-JTB">
                                         <rect key="frame" x="312" y="0.0" width="61" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Log Out Icon"/>
@@ -501,6 +503,110 @@ Gore, potke, dobra družba in termoska kave.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4P-Zl-PSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="803.81679389312978" y="81.690140845070431"/>
+        </scene>
+        <!--User Profile Controller-->
+        <scene sceneID="GrG-Tq-Xul">
+            <objects>
+                <viewController id="I2K-3Q-lZA" customClass="UserProfileController" customModule="Planinski_dnevnik" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v1u-NV-LzM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xE8-op-Mnh">
+                                <rect key="frame" x="10" y="89" width="353" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uporabnik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4y-gP-tGs">
+                                        <rect key="frame" x="48" y="0.0" width="305" height="40"/>
+                                        <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="24"/>
+                                        <color key="textColor" name="Text Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqU-0M-l5Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="5df-Ll-hHd"/>
+                                            <constraint firstAttribute="width" constant="42" id="nuA-O0-QPo"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Back Icon"/>
+                                        <connections>
+                                            <action selector="backButtonPressed" destination="I2K-3Q-lZA" eventType="touchUpInside" id="6z7-TH-TLG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="RqU-0M-l5Z" secondAttribute="bottom" id="Ctd-Ar-TlS"/>
+                                    <constraint firstItem="RqU-0M-l5Z" firstAttribute="leading" secondItem="xE8-op-Mnh" secondAttribute="leading" id="EYd-2D-LaJ"/>
+                                    <constraint firstItem="B4y-gP-tGs" firstAttribute="leading" secondItem="RqU-0M-l5Z" secondAttribute="trailing" constant="6" id="IrR-Xk-n4g"/>
+                                    <constraint firstAttribute="bottom" secondItem="B4y-gP-tGs" secondAttribute="bottom" id="JkE-NG-aSO"/>
+                                    <constraint firstItem="B4y-gP-tGs" firstAttribute="top" secondItem="xE8-op-Mnh" secondAttribute="top" id="ON1-PO-oqL"/>
+                                    <constraint firstAttribute="trailing" secondItem="B4y-gP-tGs" secondAttribute="trailing" id="OYz-vn-kLy"/>
+                                    <constraint firstItem="RqU-0M-l5Z" firstAttribute="top" secondItem="xE8-op-Mnh" secondAttribute="top" id="ZvZ-B1-5Xm"/>
+                                    <constraint firstItem="B4y-gP-tGs" firstAttribute="top" secondItem="xE8-op-Mnh" secondAttribute="top" id="ofO-eT-PI4"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BeB-C8-dUF">
+                                <rect key="frame" x="30" y="149" width="333" height="634"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="ru0-lk-hdF">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="Vf7-vS-Yry">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="9PD-TV-ReT"/>
+                                                    <constraint firstAttribute="width" constant="100" id="Up3-eD-cVa"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Opis" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bI-O3-Jzj">
+                                                <rect key="frame" x="135" y="0.0" width="198" height="100"/>
+                                                <color key="textColor" name="Text Color"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ta uporabnik nima zabeležene aktivnosti." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSg-iY-4zF">
+                                        <rect key="frame" x="0.0" y="110" width="333" height="21.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="unE-ey-ptR">
+                                        <rect key="frame" x="0.0" y="141.66666666666671" width="333" height="492.33333333333326"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XRp-3M-4hh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XRp-3M-4hh" firstAttribute="trailing" secondItem="xE8-op-Mnh" secondAttribute="trailing" constant="30" id="3FD-RN-hDz"/>
+                            <constraint firstItem="xE8-op-Mnh" firstAttribute="leading" secondItem="XRp-3M-4hh" secondAttribute="leading" constant="10" id="3SO-Nz-1Qx"/>
+                            <constraint firstItem="BeB-C8-dUF" firstAttribute="leading" secondItem="XRp-3M-4hh" secondAttribute="leading" constant="30" id="Nxl-bv-e5P"/>
+                            <constraint firstItem="xE8-op-Mnh" firstAttribute="top" secondItem="XRp-3M-4hh" secondAttribute="top" constant="30" id="W0E-Fo-F8r"/>
+                            <constraint firstItem="XRp-3M-4hh" firstAttribute="trailing" secondItem="BeB-C8-dUF" secondAttribute="trailing" constant="30" id="ZyW-WZ-9WV"/>
+                            <constraint firstItem="XRp-3M-4hh" firstAttribute="bottom" secondItem="BeB-C8-dUF" secondAttribute="bottom" id="gjt-GR-EZi"/>
+                            <constraint firstItem="BeB-C8-dUF" firstAttribute="top" secondItem="xE8-op-Mnh" secondAttribute="bottom" constant="20" id="zmS-mQ-r6x"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userBioLabel" destination="5bI-O3-Jzj" id="Kaw-FM-Es1"/>
+                        <outlet property="userNameLabel" destination="B4y-gP-tGs" id="2LF-Gd-ENK"/>
+                        <outlet property="userNoPostsLabel" destination="eSg-iY-4zF" id="DPc-iy-0h7"/>
+                        <outlet property="userPostsTable" destination="unE-ey-ptR" id="JIC-lG-dX7"/>
+                        <outlet property="userProfilePhoto" destination="Vf7-vS-Yry" id="RKg-h8-nGI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uk3-Dx-fbq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="59" y="760"/>
         </scene>
     </scenes>
     <resources>

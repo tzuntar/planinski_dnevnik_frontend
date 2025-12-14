@@ -7,7 +7,8 @@ class LogViewController : UIViewController {
     var posts: [Post]?
     
     @IBOutlet weak var postsTable: UITableView!
-
+    @IBOutlet weak var noDataLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         postsTable.register(UINib(nibName: "JournalPostCell", bundle: nil),
@@ -18,6 +19,7 @@ class LogViewController : UIViewController {
         // the pull-to-refresh thingy
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshJournal), for: .valueChanged)
+        postsTable.refreshControl = refreshControl
         
         DispatchQueue.global(qos: .background).async {
             self.journalLogic!.retrievePosts()
@@ -45,6 +47,7 @@ class LogViewController : UIViewController {
 extension LogViewController: JournalDelegate {
     func didFetchPosts(_ posts: [Post]) {
         self.posts = posts
+        noDataLabel.isHidden = posts.count > 0
         postsTable.reloadData()
     }
     
@@ -65,7 +68,7 @@ extension LogViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalPostCell", for: indexPath) as! JournalPostCell
         if posts != nil && posts?.count ?? 0 > 0 {
             if indexPath.row < posts!.count {
-                cell.loadPost(posts![indexPath.row])
+                cell.configure(with: posts![indexPath.row])
                 return cell
             }
         }

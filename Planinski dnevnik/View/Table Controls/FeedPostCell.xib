@@ -28,12 +28,26 @@
                                             <constraint firstAttribute="width" constant="25" id="SBo-Zm-Hb7"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZo-er-vTb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEg-Vf-Plh">
                                         <rect key="frame" x="25" y="0.0" width="368" height="36"/>
-                                        <fontDescription key="fontDescription" name="Outfit Thin Medium" family="Outfit Thin Medium" pointSize="17"/>
-                                        <color key="textColor" name="Text Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="Dh5-5f-zEm"/>
+                                        </constraints>
+                                        <color key="tintColor" name="AccentColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="User">
+                                                    <attributes>
+                                                        <font key="NSFont" size="17" name="Outfit-Thin_Medium"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="userTapped" destination="fRw-Sz-RSa" eventType="touchUpInside" id="39r-9w-TUI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="File Pending" translatesAutoresizingMaskIntoConstraints="NO" id="0Lk-Kq-F8I">
@@ -79,7 +93,7 @@
                 <outlet property="postDescriptionLabel" destination="7CE-4J-aTl" id="paV-17-Hom"/>
                 <outlet property="postImageView" destination="0Lk-Kq-F8I" id="Zqj-9k-AA6"/>
                 <outlet property="postTitleLabel" destination="339-S5-KXW" id="kiZ-ZR-XLh"/>
-                <outlet property="postUserLabel" destination="nZo-er-vTb" id="fRx-e8-w5S"/>
+                <outlet property="postUserButton" destination="VEg-Vf-Plh" id="Eig-vl-Npp"/>
             </connections>
             <point key="canvasLocation" x="130.53435114503816" y="102.46478873239437"/>
         </tableViewCell>
@@ -87,6 +101,9 @@
     <resources>
         <image name="File Pending" width="237" height="176"/>
         <image name="User" width="37" height="36"/>
+        <namedColor name="AccentColor">
+            <color red="0.075999997556209564" green="0.16899999976158142" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Page Background">
             <color red="0.96799999475479126" green="0.99000000953674316" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

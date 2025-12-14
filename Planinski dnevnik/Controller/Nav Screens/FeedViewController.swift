@@ -27,6 +27,14 @@ class FeedViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ShowUserProfile",
+              let userId = sender as? Int,
+              let destination = segue.destination as? UserProfileController
+        else { return }
+        destination.userId = userId
+    }
+    
     @objc func refreshFeed() {
         DispatchQueue.global(qos: .background).async {  // gremo v background thread za API request
             self.feedLogic!.retrievePosts()
@@ -72,12 +80,21 @@ extension FeedViewController: UITableViewDataSource {
     // napolni dano vrstico s podatki
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedPostCell", for: indexPath) as! FeedPostCell
+        cell.delegate = self
         if posts != nil && posts?.count ?? 0 > 0 {
             if indexPath.row < posts!.count {
-                cell.loadPost(posts![indexPath.row])
+                cell.configure(with: posts![indexPath.row])
                 return cell
             }
         }
         return cell
+    }
+}
+
+// MARK: - Posts Table Cell Delegate
+extension FeedViewController: FeedPostCellDelegate {
+    func feedPostCell(_ cell: FeedPostCell, didTapUserWithId id: Int) {
+        self.performSegue(withIdentifier: "ShowUserProfile", sender: id)
+        // invokes the prepare(for: segue...) method above
     }
 }

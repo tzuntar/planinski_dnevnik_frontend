@@ -35,7 +35,7 @@ class ProfileViewController : UIViewController {
     }
 }
 
-extension ProfileViewController: UserAccountDelegate {
+extension ProfileViewController: UserProfileDelegate {
     
     func didLoadUserData(_ user: User) {
         self.currentUser = user
@@ -43,7 +43,7 @@ extension ProfileViewController: UserAccountDelegate {
     
     func didLoadingFailWithError(_ error: any Error) {
         var message = error.localizedDescription;
-        if let error = error as? UserAccountError {
+        if let error = error as? UserProfileError {
             message = error.description
         }
         let alert = UIAlertController(

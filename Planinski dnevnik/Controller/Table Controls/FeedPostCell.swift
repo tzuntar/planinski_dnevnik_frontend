@@ -1,22 +1,33 @@
 import UIKit
 
+protocol FeedPostCellDelegate: AnyObject {
+    func feedPostCell(_ cell: FeedPostCell, didTapUserWithId id: Int)
+}
+
 class FeedPostCell : UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var postDescriptionLabel: UILabel!
-    @IBOutlet weak var postUserLabel: UILabel!
+    @IBOutlet weak var postUserButton: UIButton!
     
-    private	var post: Post?
+    private var userId: Int?
+    weak var delegate: FeedPostCellDelegate?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        postImageView.layer.cornerRadius = 10
     }
     
-    func loadPost(_ post: Post) {
-        self.post = post
+    func configure(with post: Post) {
         postTitleLabel.text = post.name
         postDescriptionLabel.text = post.description
         postImageView.loadFrom(URLAddress: "\(APIURL)/\(post.photo_path)")
-        //postUserLabel.text = post.user_name
+        postUserButton.setTitle(post.user?.name, for: .normal)
+        userId = post.user_id
+    }
+
+    @IBAction private func userTapped() {
+        guard let userId = self.userId else { return }
+        delegate?.feedPostCell(self, didTapUserWithId: userId)
     }
 }

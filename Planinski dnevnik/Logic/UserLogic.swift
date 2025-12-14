@@ -9,12 +9,12 @@ import Foundation
 import Alamofire
 import UIKit
 
-protocol UserAccountDelegate{
+protocol UserProfileDelegate {
     func didLoadUserData(_ user: User)
     func didLoadingFailWithError(_ error: Error)
 }
 
-enum UserAccountError: Error,CustomStringConvertible{
+enum UserProfileError: Error,CustomStringConvertible {
     case noData
     case unauthorized
     case missingAuthHeaders
@@ -35,21 +35,25 @@ enum UserAccountError: Error,CustomStringConvertible{
 }
 
 class UserLogic {
-    var delegate: UserAccountDelegate?
+    let delegate: UserProfileDelegate
+
+    init(delegatingActionsTo delegate: UserProfileDelegate) {
+        self.delegate = delegate
+    }
     
-    func retrieveData(for user: User) {
+    func retrieveData(for userId: Int) {
         guard let authHeaders = AuthManager.shared.getAuthHeaders() else {
-            delegate?.didLoadingFailWithError(UserAccountError.missingAuthHeaders)
+            delegate.didLoadingFailWithError(UserProfileError.missingAuthHeaders)
             return
         }
         
-        let endpoint = "\(APIURL)/users/\(user.id)AP"
+        let endpoint = "\(APIURL)/users/\(userId)"
         
         AF.request(endpoint, headers: authHeaders)
             .validate()
             .responseDecodable(of: User.self) { response in
                 if let safeResponse = response.value {
-                    self.delegate?.didLoadUserData(safeResponse)
+                    self.delegate.didLoadUserData(safeResponse)
                     return
                 }
                 if let safeResponse = response.response {
@@ -62,9 +66,9 @@ class UserLogic {
     private func handleError(forCode responseCode: Int) {
         switch responseCode {
         case 500:
-            delegate?.didLoadingFailWithError(UserAccountError.noData)
+            delegate.didLoadingFailWithError(UserProfileError.noData)
         default:
-            delegate?.didLoadingFailWithError(UserAccountError.unexpected(code: responseCode))
+            delegate.didLoadingFailWithError(UserProfileError.unexpected(code: responseCode))
         }
     }
 }

@@ -17,9 +17,8 @@ class User: Codable {
     let name: String
     let email: String?
     let bio: String?
-    //let registration_date: String
-    //let photo_uri: String?
-    
+    let photo_path: String?
+    let posts: [Post]?
 }
 
 class Post: Codable {
@@ -29,4 +28,5 @@ class Post: Codable {
     let user_id: Int
     let peak_id: Int?
     let photo_path: String
+    let user: User?
 }

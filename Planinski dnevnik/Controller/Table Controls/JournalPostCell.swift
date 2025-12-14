@@ -4,15 +4,13 @@ class JournalPostCell : UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var postDescriptionLabel: UILabel!
-    
-    private var post: Post?
-    
-    override class func awakeFromNib() {
-        super.awakeFromNib()
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        postImageView.layer.cornerRadius = 10
     }
-    
-    func loadPost(_ post: Post) {
-        self.post = post
+
+    func configure(with post: Post) {
         postTitleLabel.text = post.name
         postDescriptionLabel.text = post.description
         postImageView.loadFrom(URLAddress: "\(APIURL)/\(post.photo_path)")
