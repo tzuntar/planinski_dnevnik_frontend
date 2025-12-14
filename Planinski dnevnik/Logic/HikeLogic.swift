@@ -37,18 +37,27 @@ class HikeLogic {
     }
     
     func postHike(with entry: HikeEntry, photo: UIImage) {
-        guard let entryData: Data = objectToUtf8Data(entry) else { return }
+        guard let entryData = objectToUtf8Data(entry) else { return }
         guard var authHeaders = AuthManager.shared.getAuthHeaders() else { return }
-        authHeaders.add(name: "Content-Type", value: "multipart/form-data")
 
-        AF.upload(multipartFormData: { multiPart in
-            multiPart.append(photo.jpegData(compressionQuality: 0.8)!,
-                                     withName: "photo",
-                                     mimeType: "image/jpg")
-            multiPart.append(entryData, withName: "journal_entry")
-        }, to: "\(APIURL)/journal_entry",
-       method: .post,
-      headers: authHeaders)
+        AF.upload(
+            multipartFormData: { multiPart in
+                multiPart.append(
+                    photo.jpegData(compressionQuality: 0.8)!,
+                    withName: "photo",
+                    fileName: "photo.jpg",
+                    mimeType: "image/jpeg"
+                )
+                multiPart.append(
+                    entryData,
+                    withName: "journal_entry",
+                    mimeType: "application/json"
+                )
+            },
+            to: "\(APIURL)/journal_entries",
+            method: .post,
+            headers: authHeaders
+        )
         .uploadProgress(queue: .main) { progress in
             self.delegate.didPostProgressChange(toFraction: progress.fractionCompleted)
         }
