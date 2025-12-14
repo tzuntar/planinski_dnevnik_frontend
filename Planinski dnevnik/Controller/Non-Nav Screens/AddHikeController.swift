@@ -54,7 +54,7 @@ class AddHikeController : UIViewController {
         hikeLogic!.postHike(with: entry, photo: selectedPhoto)
     }
 
-    @IBAction func textFieldTextChanged(_ sender: UITextField) {
+    @IBAction func textFieldTextChanged() {
         addHikeButton.isEnabled = !nameField.text!.isEmpty
             && !descriptionField.text!.isEmpty
             && !peakNameField.text!.isEmpty
@@ -91,6 +91,7 @@ extension AddHikeController : UIImagePickerControllerDelegate, UINavigationContr
         guard let photo = info[.originalImage] as? UIImage else { return }
         selectedPhoto = photo
         selectedPhotoView.image = photo
+        self.textFieldTextChanged() // to re-check for selected photo and enable the submit button
     }
 }
 

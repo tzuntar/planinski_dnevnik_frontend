@@ -87,7 +87,7 @@
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="textFieldTextChanged:" destination="5eO-8E-a7V" eventType="editingDidEnd" id="Wdw-eb-EjP"/>
+                                                    <action selector="textFieldTextChanged" destination="5eO-8E-a7V" eventType="editingChanged" id="yye-0s-sfy"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -109,7 +109,7 @@
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="textFieldTextChanged:" destination="5eO-8E-a7V" eventType="editingDidEnd" id="Ocf-Tg-UiS"/>
+                                                    <action selector="textFieldTextChanged" destination="5eO-8E-a7V" eventType="editingChanged" id="1ao-az-aSm"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
@@ -131,7 +131,7 @@
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
-                                                    <action selector="textFieldTextChanged:" destination="5eO-8E-a7V" eventType="editingDidEnd" id="sz5-IP-oCU"/>
+                                                    <action selector="textFieldTextChanged" destination="5eO-8E-a7V" eventType="editingChanged" id="V9q-xQ-27A"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
