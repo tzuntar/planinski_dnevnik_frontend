@@ -255,6 +255,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IF2-B8-2Qz">
                                 <rect key="frame" x="20" y="215" width="353" height="569"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" name="Page Background"/>
+                                <color key="sectionIndexBackgroundColor" name="Page Background"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" toolTip="Dodaj vnos" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKQ-aF-8br">
                                 <rect key="frame" x="303" y="714" width="70" height="70"/>
@@ -281,7 +283,6 @@
                             <constraint firstItem="v9M-RC-JQ8" firstAttribute="leading" secondItem="Qb0-kP-hFm" secondAttribute="leading" constant="20" id="66g-zN-Kqk"/>
                             <constraint firstItem="Qb0-kP-hFm" firstAttribute="trailing" secondItem="v9M-RC-JQ8" secondAttribute="trailing" constant="10" id="7qm-hA-kdY"/>
                             <constraint firstItem="Qb0-kP-hFm" firstAttribute="top" secondItem="v9M-RC-JQ8" secondAttribute="top" id="9dF-jg-ZDz"/>
-                            <constraint firstItem="Qb0-kP-hFm" firstAttribute="trailing" secondItem="IF2-B8-2Qz" secondAttribute="trailing" constant="20" id="Csl-bc-m4I"/>
                             <constraint firstItem="Qb0-kP-hFm" firstAttribute="trailing" secondItem="AKQ-aF-8br" secondAttribute="trailing" constant="20" id="EZt-WJ-eox"/>
                             <constraint firstItem="6hx-hg-bL8" firstAttribute="leading" secondItem="Qb0-kP-hFm" secondAttribute="leading" constant="20" id="ExW-jQ-cfm"/>
                             <constraint firstItem="6hx-hg-bL8" firstAttribute="top" secondItem="v9M-RC-JQ8" secondAttribute="bottom" constant="10" id="He7-9Z-fEO"/>
@@ -294,7 +295,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="IF2-B8-2Qz" id="E1A-xY-7mI"/>
+                        <outlet property="postsTable" destination="IF2-B8-2Qz" id="80q-J3-OJW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VgW-Ub-XIy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -311,7 +312,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tMU-Sm-ApS">
                                 <rect key="frame" x="20" y="173" width="353" height="611"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Page Background"/>
+                                <color key="separatorColor" name="Page Background"/>
+                                <color key="sectionIndexBackgroundColor" name="Page Background"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CT-uJ-YoV">
                                 <rect key="frame" x="0.0" y="118" width="393" height="45"/>
@@ -415,12 +418,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="YXT-nL-nxY">
                                 <rect key="frame" x="20" y="178" width="353" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gcG-zB-5hA">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="gcG-zB-5hA">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="5kI-78-cv4"/>
                                             <constraint firstAttribute="height" constant="100" id="gsg-7Y-AhB"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="rI4-nr-Npu">
                                         <rect key="frame" x="135" y="0.0" width="218" height="100"/>
@@ -504,6 +512,7 @@ Gore, potke, dobra družba in termoska kave.</string>
         <image name="Navigate Right to Feed" width="52" height="31"/>
         <image name="Profile Navigate Right" width="52" height="31"/>
         <image name="Select Photo" width="233" height="131"/>
+        <image name="User" width="37" height="36"/>
         <namedColor name="Page Background">
             <color red="0.96799999475479126" green="0.99000000953674316" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
