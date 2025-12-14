@@ -54,6 +54,7 @@ class FeedViewController: UIViewController {
 extension FeedViewController: FeedDelegate {
     func didFetchPosts(_ posts: [Post]) {
         self.posts = posts
+        postsTable.reloadData()
     }
     
     func didFetchingFailWithError(_ error: any Error) {

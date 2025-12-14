@@ -24,10 +24,9 @@ class User: Codable {
 
 class Post: Codable {
     let id: Int
-    let title: String
+    let name: String
     let description: String
-    let nadmorska_visina: Int?
     let user_id: Int
-    let user_name: String
-    let photo_url: String
+    let peak_id: Int?
+    let photo_path: String
 }

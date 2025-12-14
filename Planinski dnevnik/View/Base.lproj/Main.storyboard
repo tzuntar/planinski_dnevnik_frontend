@@ -371,10 +371,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBz-MF-8Py">
-                                <rect key="frame" x="10" y="118" width="373" height="45"/>
+                                <rect key="frame" x="10" y="118" width="373" height="50"/>
                                 <subviews>
                                     <button toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRk-b1-anj">
-                                        <rect key="frame" x="0.0" y="0.0" width="76" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="76" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Navigate Left to Feed"/>
                                         <connections>
@@ -382,13 +382,22 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moj profil" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ac-dV-bHe">
-                                        <rect key="frame" x="86" y="0.0" width="287" height="45"/>
+                                        <rect key="frame" x="86" y="0.0" width="287" height="50"/>
                                         <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="24"/>
                                         <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" toolTip="Odjava" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-NQ-JTB">
+                                        <rect key="frame" x="312" y="0.0" width="61" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Log Out Icon"/>
+                                        <connections>
+                                            <action selector="logOutPressed" destination="Rjk-Yj-Iab" eventType="touchUpInside" id="ug5-Dy-dbc"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="z4m-NQ-JTB" firstAttribute="top" secondItem="nBz-MF-8Py" secondAttribute="top" id="AWM-BR-lcG"/>
                                     <constraint firstAttribute="bottom" secondItem="6Ac-dV-bHe" secondAttribute="bottom" id="E2Y-da-oZ3"/>
                                     <constraint firstItem="6Ac-dV-bHe" firstAttribute="top" secondItem="nBz-MF-8Py" secondAttribute="top" id="Er4-jD-HyN"/>
                                     <constraint firstItem="NRk-b1-anj" firstAttribute="top" secondItem="nBz-MF-8Py" secondAttribute="top" id="FXs-6E-Gqp"/>
@@ -398,11 +407,13 @@
                                     <constraint firstItem="NRk-b1-anj" firstAttribute="leading" secondItem="nBz-MF-8Py" secondAttribute="leading" id="gvd-LU-kya"/>
                                     <constraint firstItem="6Ac-dV-bHe" firstAttribute="leading" secondItem="NRk-b1-anj" secondAttribute="trailing" constant="10" id="p6S-fI-u5U"/>
                                     <constraint firstItem="6Ac-dV-bHe" firstAttribute="top" secondItem="nBz-MF-8Py" secondAttribute="top" id="paT-Sc-St5"/>
+                                    <constraint firstAttribute="trailing" secondItem="z4m-NQ-JTB" secondAttribute="trailing" id="twP-fX-plk"/>
+                                    <constraint firstAttribute="bottom" secondItem="z4m-NQ-JTB" secondAttribute="bottom" id="whg-Ni-T9Q"/>
                                     <constraint firstAttribute="bottom" secondItem="NRk-b1-anj" secondAttribute="bottom" id="yBj-Mz-S4S"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="YXT-nL-nxY">
-                                <rect key="frame" x="20" y="173" width="353" height="100"/>
+                                <rect key="frame" x="20" y="178" width="353" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gcG-zB-5hA">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -431,7 +442,7 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XBw-LQ-Bvt">
-                                <rect key="frame" x="20" y="283" width="353" height="120"/>
+                                <rect key="frame" x="20" y="288" width="353" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="U5Y-jE-SZp"/>
                                 </constraints>
@@ -442,13 +453,13 @@ Gore, potke, dobra družba in termoska kave.</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nedavni vzponi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIe-3b-Hpa">
-                                <rect key="frame" x="20" y="423" width="353" height="28"/>
+                                <rect key="frame" x="20" y="428" width="353" height="28"/>
                                 <fontDescription key="fontDescription" name="Outfit-Thin_Bold" family="Outfit" pointSize="22"/>
                                 <color key="textColor" name="Text Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mLp-PX-kM3">
-                                <rect key="frame" x="20" y="461" width="353" height="391"/>
+                                <rect key="frame" x="20" y="466" width="353" height="386"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -488,6 +499,7 @@ Gore, potke, dobra družba in termoska kave.</string>
         <image name="Add Entry" width="48" height="48"/>
         <image name="Back Icon" width="34" height="34"/>
         <image name="Log Navigate Left" width="52" height="31"/>
+        <image name="Log Out Icon" width="37" height="36"/>
         <image name="Navigate Left to Feed" width="52" height="31"/>
         <image name="Navigate Right to Feed" width="52" height="31"/>
         <image name="Profile Navigate Right" width="52" height="31"/>

@@ -14,9 +14,9 @@ class FeedPostCell : UITableViewCell {
     
     func loadPost(_ post: Post) {
         self.post = post
-        postTitleLabel.text = post.title
+        postTitleLabel.text = post.name
         postDescriptionLabel.text = post.description
-        postImageView.loadFrom(URLAddress: "\(APIURL)/content/\(post.photo_url)")
-        postUserLabel.text = post.user_name
+        postImageView.loadFrom(URLAddress: "\(APIURL)/\(post.photo_path)")
+        //postUserLabel.text = post.user_name
     }
 }

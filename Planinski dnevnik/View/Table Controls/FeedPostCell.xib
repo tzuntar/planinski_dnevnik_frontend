@@ -20,33 +20,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="331"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Lk-Kq-F8I">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="251"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="bc1-df-WW1"/>
+                                </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xme-dN-jy4">
-                                <rect key="frame" x="0.0" y="251" width="393" height="80"/>
+                                <rect key="frame" x="0.0" y="250" width="393" height="81"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="339-S5-KXW">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="23.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="23.666666666666668"/>
                                         <fontDescription key="fontDescription" name="Outfit Thin Medium" family="Outfit Thin Medium" pointSize="17"/>
                                         <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Post Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CE-4J-aTl">
-                                        <rect key="frame" x="0.0" y="28.333333333333314" width="393" height="23.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="28.666666666666686" width="393" height="23.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Outfit Thin Medium" family="Outfit Thin Medium" pointSize="15"/>
                                         <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZo-er-vTb">
-                                        <rect key="frame" x="0.0" y="56.666666666666693" width="393" height="23.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="57.333333333333307" width="393" height="23.666666666666664"/>
                                         <fontDescription key="fontDescription" name="Outfit Thin Medium" family="Outfit Thin Medium" pointSize="17"/>
                                         <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="aeD-76-meQ"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                     </stackView>

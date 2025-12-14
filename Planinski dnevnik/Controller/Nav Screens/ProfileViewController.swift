@@ -25,6 +25,14 @@ class ProfileViewController : UIViewController {
             parentVC.moveToPage(HomeSwipeController.PagesIndex.FeedPage.rawValue, animated: true)
         }
     }
+
+    @IBAction func logOutPressed() {
+        AuthManager.shared.endSession()
+        let loginStoryboard = UIStoryboard(name: "Auth", bundle: nil)
+        let loginController = loginStoryboard.instantiateViewController(withIdentifier: "LoginVC")
+        loginController.modalPresentationStyle = .fullScreen
+        present(loginController, animated: true, completion: nil)
+    }
 }
 
 extension ProfileViewController: UserAccountDelegate {
