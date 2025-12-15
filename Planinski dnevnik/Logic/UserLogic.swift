@@ -12,6 +12,7 @@ import UIKit
 protocol UserProfileDelegate {
     func didLoadUserData(_ user: User)
     func didLoadingFailWithError(_ error: Error)
+    func didUpdateUserData()
 }
 
 enum UserProfileError: Error,CustomStringConvertible {
@@ -61,6 +62,35 @@ class UserLogic {
                 }
             }
     }
+
+        func updateBio(newBio: String) {
+            guard let authHeaders = AuthManager.shared.getAuthHeaders() else {
+                delegate.didLoadingFailWithError(UserProfileError.missingAuthHeaders)
+                return
+            }
+            
+           
+            let endpoint = "\(APIURL)/update_bio"
+            
+            let parameters: [String: Any] = [
+                "bio": newBio
+            ]
+            
+            AF.request(endpoint, method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: authHeaders)
+                .validate()
+                .response { response in
+                    switch response.result {
+                    case .success:
+                        self.delegate.didUpdateUserData()
+                    case .failure(let error):
+                        if let statusCode = response.response?.statusCode {
+                            self.handleError(forCode: statusCode)
+                        } else {
+                            self.delegate.didLoadingFailWithError(error)
+                        }
+                    }
+                }
+        }
     
     
     private func handleError(forCode responseCode: Int) {

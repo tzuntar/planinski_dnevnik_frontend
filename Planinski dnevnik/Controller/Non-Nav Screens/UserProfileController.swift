@@ -40,6 +40,10 @@ extension UserProfileController: UserProfileDelegate {
         userPostsTable.reloadData()
     }
     
+    func didUpdateUserData() {
+        //TODO
+    }
+    
     func didLoadingFailWithError(_ error: any Error) {
         // TODO: error popup
         self.dismiss(animated: true)

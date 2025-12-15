@@ -8,18 +8,36 @@ class ProfileViewController : UIViewController {
     @IBOutlet weak var displayNameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     
+    private lazy var userLogic = UserLogic(delegatingActionsTo: self)
+    
+    private var originalBio: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentUser = AuthManager.shared.session?.user
         
         bioTextBox.layer.cornerRadius = 8
-        bioTextBox.text = currentUser?.bio
         usernameLabel.text = currentUser?.name
+        
+        let currentBio = currentUser?.bio
+        bioTextBox.text = currentBio
+        originalBio = currentBio ?? ""
         // TODO: Fetch image, recent vzponi, display name...
     
     }
     
     
+    @IBAction func bioTextFieldEditingDidEnd(_ sender: UITextField) {
+        
+        guard let newText = sender.text else { return }
+                
+                if newText != originalBio {
+                    print("HELLO")
+                    userLogic.updateBio(newBio: newText)
+                    
+                    originalBio = newText
+                }
+    }
     
     @IBAction func navToFeedPressed() {
         // yes, it's technically its parent. yes, it's two levels higher in the hierarchy.
@@ -41,6 +59,10 @@ extension ProfileViewController: UserProfileDelegate {
     
     func didLoadUserData(_ user: User) {
         self.currentUser = user
+    }
+    
+    func didUpdateUserData() {
+        //TODO:
     }
     
     func didLoadingFailWithError(_ error: any Error) {

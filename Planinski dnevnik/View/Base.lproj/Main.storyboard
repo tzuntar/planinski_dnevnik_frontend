@@ -470,6 +470,9 @@
                                 <rect key="frame" x="20" y="232" width="353" height="129"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="bioTextFieldEditingDidEnd:" destination="Rjk-Yj-Iab" eventType="editingDidEnd" id="luL-X5-qOs"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ESY-fY-WA1"/>
