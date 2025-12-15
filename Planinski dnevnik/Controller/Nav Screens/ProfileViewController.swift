@@ -4,20 +4,22 @@ class ProfileViewController : UIViewController {
     
     private var currentUser: User?
     
+    @IBOutlet weak var bioTextBox: UITextField!
     @IBOutlet weak var displayNameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var bioLabel: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentUser = AuthManager.shared.session?.user
         
-        bioLabel.layer.cornerRadius = 8
-        bioLabel.text = currentUser?.bio
+        bioTextBox.layer.cornerRadius = 8
+        bioTextBox.text = currentUser?.bio
         usernameLabel.text = currentUser?.name
         // TODO: Fetch image, recent vzponi, display name...
     
     }
+    
+    
     
     @IBAction func navToFeedPressed() {
         // yes, it's technically its parent. yes, it's two levels higher in the hierarchy.

@@ -159,7 +159,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Planinski dnevnik/Planinski dnevnik.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H7ZBTZ9NS;
+				DEVELOPMENT_TEAM = HHSLTFTMGC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Planinski dnevnik/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -195,7 +195,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Planinski dnevnik/Planinski dnevnik.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6H7ZBTZ9NS;
+				DEVELOPMENT_TEAM = HHSLTFTMGC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Planinski dnevnik/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
