@@ -216,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="-1486.2595419847328" y="81.690140845070431"/>
         </scene>
-        <!--Log View Controller-->
+        <!--Journal View Controller-->
         <scene sceneID="BLd-f7-WI3">
             <objects>
-                <viewController storyboardIdentifier="log-vc" id="SgC-O6-mdC" customClass="LogViewController" customModule="Planinski_dnevnik" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="log-vc" id="SgC-O6-mdC" customClass="JournalViewController" customModule="Planinski_dnevnik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4CH-Oz-iWs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -252,8 +252,8 @@
                                     <constraint firstItem="Ph1-hh-I6f" firstAttribute="leading" secondItem="Pgv-bv-BZn" secondAttribute="trailing" constant="10" id="zyb-Bv-V6Z"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IF2-B8-2Qz">
-                                <rect key="frame" x="20" y="155.66666666666669" width="353" height="662.33333333333326"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IF2-B8-2Qz">
+                                <rect key="frame" x="20" y="213" width="353" height="571"/>
                                 <color key="backgroundColor" name="Page Background"/>
                                 <color key="separatorColor" name="Page Background"/>
                                 <color key="sectionIndexBackgroundColor" name="Page Background"/>
@@ -271,7 +271,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opravili niste še nobenega vzpona." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hx-hg-bL8">
-                                <rect key="frame" x="20" y="114" width="353" height="21.666666666666657"/>
+                                <rect key="frame" x="20" y="173" width="353" height="20"/>
                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

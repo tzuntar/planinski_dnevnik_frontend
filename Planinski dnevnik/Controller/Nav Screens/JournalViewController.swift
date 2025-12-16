@@ -1,6 +1,6 @@
 import UIKit
 
-class LogViewController : UIViewController {
+class JournalViewController : UIViewController {
     
     var journalLogic: JournalLogic?
     
@@ -14,6 +14,7 @@ class LogViewController : UIViewController {
         postsTable.register(UINib(nibName: "JournalPostCell", bundle: nil),
                             forCellReuseIdentifier: "JournalPostCell")
         postsTable.dataSource = self    // see the extension below
+        postsTable.delegate = self
         journalLogic = JournalLogic(delegatingActionsTo: self)
         
         // the pull-to-refresh thingy
@@ -44,7 +45,7 @@ class LogViewController : UIViewController {
 }
 
 // MARK: - Journal Delegate
-extension LogViewController: JournalDelegate {
+extension JournalViewController: JournalDelegate {
     func didFetchPosts(_ posts: [Post]) {
         self.posts = posts
         noDataLabel.isHidden = posts.count > 0
@@ -57,7 +58,7 @@ extension LogViewController: JournalDelegate {
 }
 
 // MARK: - Posts Table View Data Source
-extension LogViewController: UITableViewDataSource {
+extension JournalViewController: UITableViewDataSource {
     // vraca stevilo vrstic podatkov
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         posts?.count ?? 0    // posts.count ce ta ni nil, sicer 0
@@ -73,5 +74,22 @@ extension LogViewController: UITableViewDataSource {
             }
         }
         return cell
+    }
+}
+
+// MAKR: - Posts Table View Delegate
+extension JournalViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+            // delete item
+            completionHandler(true)
+        }
+        deleteAction.image = UIImage(systemName: "trash")
+        deleteAction.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }

@@ -44,6 +44,17 @@ class JournalLogic {
             }
     }
     
+    func deletePost(withId postId: Int) {
+        guard let authHeaders = AuthManager.shared.getAuthHeaders() else { return }
+        AF.request("\(APIURL)/journal_entries/\(postId)",
+                    method: .delete,
+                   headers: authHeaders)
+            .validate()
+            .responseDecodable(of: Post.self) { response in
+                
+            }
+    }
+    
     private func handleError(forCode responseCode: Int) {
         switch responseCode {
         case 500:
