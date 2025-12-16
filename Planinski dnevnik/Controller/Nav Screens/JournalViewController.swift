@@ -26,6 +26,14 @@ class JournalViewController : UIViewController {
             self.journalLogic!.retrievePosts()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowHikeEntryScreen" {
+            guard let postsRow = sender as? Int else { return }
+            let vc = segue.destination as! HikeEntryController
+            vc.existingHike = posts![postsRow]
+        }
+    }
 
     @objc func refreshJournal() {
         DispatchQueue.global(qos: .background).async {
@@ -89,7 +97,12 @@ extension JournalViewController: UITableViewDelegate {
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "ShowHikeEntryScreen", sender: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
+    
+    /*func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }*/
 }

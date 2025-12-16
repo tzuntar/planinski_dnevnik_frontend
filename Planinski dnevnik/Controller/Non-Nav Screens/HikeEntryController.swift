@@ -1,7 +1,8 @@
 import UIKit
 
-class AddHikeController : UIViewController {
+class HikeEntryController : UIViewController {
     
+    @IBOutlet weak var viewTitleLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var peakNameField: UITextField!
@@ -14,6 +15,9 @@ class AddHikeController : UIViewController {
     private var photoPicker: UIImagePickerController?
     private var selectedPhoto: UIImage?
 
+    // used when editing an existing post; should be unset on new posts
+    var existingHike: Post?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
@@ -24,6 +28,20 @@ class AddHikeController : UIViewController {
         selectedPhotoView.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                       action: #selector(selectedPhotoPressed)))
         initPhotoPicker()
+        if existingHike != nil {
+            configure(forPost: existingHike!)
+            viewTitleLabel.text = "Uredi vzpon"
+        }
+    }
+    
+    func configure(forPost post: Post) {
+        // TODO: Tobija
+        existingHike = post
+        nameField.text = post.name
+        descriptionField.text = post.description
+        //publicPostToggle.isOn = post.is_public
+        selectedPhotoView.loadFrom(URLAddress: "\(APIURL)/\(post.photo_path)")
+        addHikeButton.isEnabled = true
     }
 
     @IBAction func backButtonPressed() {
@@ -63,7 +81,7 @@ class AddHikeController : UIViewController {
 }
 
 // MARK: - Photo Picker Delegate
-extension AddHikeController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension HikeEntryController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     private func initPhotoPicker() {
         if !UIImagePickerController.isSourceTypeAvailable(.photoLibrary) { return }
         photoPicker = UIImagePickerController()
@@ -96,7 +114,7 @@ extension AddHikeController : UIImagePickerControllerDelegate, UINavigationContr
 }
 
 // MARK: - Add Hike Delegate
-extension AddHikeController : AddHikeDelegate {
+extension HikeEntryController : AddHikeDelegate {
     func didAddHike(_ post: Post) {
         self.dismiss(animated: true)
     }
