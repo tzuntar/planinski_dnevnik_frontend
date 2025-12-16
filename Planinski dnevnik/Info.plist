@@ -2,11 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Aplikacija potrebuje vašo lokacijo za prikaz trenutnega vremena</string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>INFOPLIST_FILE</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>Path</string>
+			</array>
+		</dict>
+	</array>
 	<key>DEFAULT_SERVER_IP</key>
 	<string>http://$(DEFAULT_SERVER_IP)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Shrikhand.ttf</string>
+		<string></string>
 		<string>Outfit.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
