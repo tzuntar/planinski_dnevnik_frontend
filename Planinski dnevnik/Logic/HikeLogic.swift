@@ -12,6 +12,7 @@ struct HikeEntry: Encodable {
     let description: String?
     let peak: String?
     let is_public: Bool?
+    let weather:String?
     let user_id: Int?
 }
 

@@ -32,7 +32,6 @@ class ProfileViewController : UIViewController {
         guard let newText = sender.text else { return }
                 
                 if newText != originalBio {
-                    print("HELLO")
                     userLogic.updateBio(newBio: newText)
                     
                     originalBio = newText

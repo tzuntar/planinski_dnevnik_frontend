@@ -1,6 +1,6 @@
 import Foundation
 
-public let APIURL = "http://127.0.0.1:3000"//SettingsHelper.getApiUrl()
+public let APIURL = "http://192.168.0.64:3000"//SettingsHelper.getApiUrl()
 
 struct Token: Codable {
     let access_token: String
@@ -28,5 +28,6 @@ class Post: Codable {
     let user_id: Int
     let peak_id: Int?
     let photo_path: String
+    let weather: String?
     let user: User?
 }
