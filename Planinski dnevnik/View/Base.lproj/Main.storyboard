@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G0x-lv-68f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G0x-lv-68f">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -31,11 +31,11 @@
             <objects>
                 <viewController id="5eO-8E-a7V" customClass="HikeEntryController" customModule="Planinski_dnevnik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ec-8y-zgU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h3P-DA-0ey">
-                                <rect key="frame" x="10" y="30" width="353" height="40"/>
+                                <rect key="frame" x="10" y="89" width="353" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dodaj vzpon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h17-hO-PBk">
                                         <rect key="frame" x="48" y="0.0" width="305" height="40"/>
@@ -68,19 +68,19 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iLf-eG-LCX">
-                                <rect key="frame" x="30" y="90" width="333" height="752"/>
+                                <rect key="frame" x="30" y="149" width="333" height="634"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fKB-5t-JaB">
-                                        <rect key="frame" x="0.0" y="0.0" width="333" height="64.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="66.333333333333329"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ime pohoda" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9a-dq-gbr">
-                                                <rect key="frame" x="0.0" y="0.0" width="333" height="18.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sprehod na Mojstrano" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iQc-YU-YfK">
-                                                <rect key="frame" x="0.0" y="28.666666666666671" width="333" height="36"/>
+                                                <rect key="frame" x="0.0" y="30.333333333333343" width="333" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="WQ7-Zt-GsH"/>
                                                 </constraints>
@@ -93,16 +93,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fA0-Le-aB7">
-                                        <rect key="frame" x="0.0" y="99.333333333333343" width="333" height="64.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="83" width="333" height="66.333333333333314"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Na kratko opišite svoj pohod" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmr-xt-OA7">
-                                                <rect key="frame" x="0.0" y="0.0" width="333" height="18.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sonček sveti, jaz pa že na vse zgodaj" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mbf-xC-7YJ">
-                                                <rect key="frame" x="0.0" y="28.666666666666657" width="333" height="36"/>
+                                                <rect key="frame" x="0.0" y="30.333333333333314" width="333" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="YVh-Ds-k7v"/>
                                                 </constraints>
@@ -115,16 +115,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="yuU-fo-OA2">
-                                        <rect key="frame" x="0.0" y="198.66666666666669" width="333" height="63.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="166.33333333333331" width="333" height="65.333333333333314"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ime vrha, na katerega ste se povzpeli" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ank-Ls-3Pd">
-                                                <rect key="frame" x="0.0" y="0.0" width="333" height="18.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mojstrana" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abX-WT-l03">
-                                                <rect key="frame" x="0.0" y="27.666666666666629" width="333" height="36"/>
+                                                <rect key="frame" x="0.0" y="29.333333333333371" width="333" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="tMu-Er-e7n"/>
                                                 </constraints>
@@ -137,10 +137,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="pux-dE-1Fc">
-                                        <rect key="frame" x="0.0" y="297" width="333" height="31"/>
+                                        <rect key="frame" x="0.0" y="248.33333333333331" width="333" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Javna objava" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEA-WJ-e9Z">
-                                                <rect key="frame" x="0.0" y="6" width="275" height="18.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="5.3333333333333712" width="275" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -151,10 +151,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="I8e-X7-WsB">
-                                        <rect key="frame" x="0.0" y="362.33333333333331" width="333" height="31"/>
+                                        <rect key="frame" x="0.0" y="296.33333333333331" width="333" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Objavi vreme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSA-TH-gbp">
-                                                <rect key="frame" x="0.0" y="6.3333333333333712" width="275" height="18.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="5.3333333333333712" width="275" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -168,23 +168,23 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Wtz-2R-ZbI">
-                                        <rect key="frame" x="0.0" y="428" width="333" height="36"/>
+                                        <rect key="frame" x="0.0" y="344" width="333" height="36"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Trenutno vreme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4F-NK-jkt">
-                                                <rect key="frame" x="0.0" y="8.6666666666666305" width="185.33333333333334" height="18.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="7.9999999999999982" width="183.66666666666666" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XTp-Kr-rZ7">
-                                                <rect key="frame" x="194.33333333333334" y="0.0" width="36" height="36"/>
+                                                <rect key="frame" x="192.66666666666666" y="0.0" width="36" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="ZNd-Zl-WW9"/>
                                                     <constraint firstAttribute="width" constant="36" id="tQ6-2B-qXR"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Objavi vreme" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yks-V0-xh2">
-                                                <rect key="frame" x="239.33333333333329" y="8.6666666666666305" width="93.666666666666657" height="18.666666666666671"/>
+                                                <rect key="frame" x="237.66666666666671" y="7.9999999999999982" width="95.333333333333343" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -192,16 +192,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sgl-d0-mag">
-                                        <rect key="frame" x="0.0" y="498.66666666666669" width="333" height="178.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="397" width="333" height="180.33333333333337"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pritisnite in izberite fotografijo z vzpona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjc-B2-ueY">
-                                                <rect key="frame" x="0.0" y="0.0" width="333" height="18.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalHuggingPriority="240" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="USY-mZ-wDh">
-                                                <rect key="frame" x="0.0" y="28.666666666666742" width="333" height="150"/>
+                                                <rect key="frame" x="0.0" y="30.333333333333371" width="333" height="150"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Select Photo" translatesAutoresizingMaskIntoConstraints="NO" id="OtG-LA-e8d">
                                                         <rect key="frame" x="0.0" y="0.0" width="333" height="150"/>
@@ -217,7 +217,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQw-oA-avF">
-                                        <rect key="frame" x="0.0" y="712" width="333" height="40"/>
+                                        <rect key="frame" x="0.0" y="594" width="333" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Lyw-es-Feg"/>
                                         </constraints>
@@ -272,7 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9M-RC-JQ8">
-                                <rect key="frame" x="20" y="59" width="363" height="45"/>
+                                <rect key="frame" x="20" y="118" width="363" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moji vzponi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgv-bv-BZn">
                                         <rect key="frame" x="0.0" y="0.0" width="277" height="45"/>
@@ -300,13 +300,13 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IF2-B8-2Qz">
-                                <rect key="frame" x="20" y="155.66666666666669" width="353" height="662.33333333333326"/>
+                                <rect key="frame" x="20" y="214.66666666666669" width="353" height="569.33333333333326"/>
                                 <color key="backgroundColor" name="Page Background"/>
                                 <color key="separatorColor" name="Page Background"/>
                                 <color key="sectionIndexBackgroundColor" name="Page Background"/>
                             </tableView>
                             <button toolTip="Dodaj vnos" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKQ-aF-8br">
-                                <rect key="frame" x="303" y="748" width="70" height="70"/>
+                                <rect key="frame" x="303" y="714" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="9Tn-CD-01g"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="ew3-CM-Fdt"/>
@@ -318,7 +318,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opravili niste še nobenega vzpona." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hx-hg-bL8">
-                                <rect key="frame" x="20" y="114" width="353" height="21.666666666666657"/>
+                                <rect key="frame" x="20" y="173" width="353" height="21.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -359,13 +359,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tMU-Sm-ApS">
-                                <rect key="frame" x="20" y="114" width="353" height="704"/>
+                                <rect key="frame" x="20" y="173" width="353" height="611"/>
                                 <color key="backgroundColor" name="Page Background"/>
                                 <color key="separatorColor" name="Page Background"/>
                                 <color key="sectionIndexBackgroundColor" name="Page Background"/>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CT-uJ-YoV">
-                                <rect key="frame" x="0.0" y="59" width="393" height="45"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="45"/>
                                 <subviews>
                                     <button toolTip="Moji vzponi" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIl-iw-cDl">
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="45"/>
@@ -423,7 +423,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBz-MF-8Py">
-                                <rect key="frame" x="10" y="59" width="373" height="50"/>
+                                <rect key="frame" x="10" y="118" width="373" height="50"/>
                                 <subviews>
                                     <button toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRk-b1-anj">
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="50"/>
@@ -465,7 +465,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="YXT-nL-nxY">
-                                <rect key="frame" x="20" y="119" width="353" height="100"/>
+                                <rect key="frame" x="20" y="178" width="353" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="gcG-zB-5hA">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -514,7 +514,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-hq-wl6">
-                                <rect key="frame" x="20" y="232" width="353" height="129"/>
+                                <rect key="frame" x="20" y="291" width="353" height="70"/>
                                 <color key="backgroundColor" name="Input Field Placeholder"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -564,11 +564,11 @@
             <objects>
                 <viewController id="I2K-3Q-lZA" customClass="UserProfileController" customModule="Planinski_dnevnik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v1u-NV-LzM">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xE8-op-Mnh">
-                                <rect key="frame" x="10" y="30" width="353" height="40"/>
+                                <rect key="frame" x="10" y="89" width="353" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uporabnik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4y-gP-tGs">
                                         <rect key="frame" x="48" y="0.0" width="305" height="40"/>
@@ -601,7 +601,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BeB-C8-dUF">
-                                <rect key="frame" x="30" y="90" width="333" height="752"/>
+                                <rect key="frame" x="30" y="149" width="333" height="634"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="ru0-lk-hdF">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="100"/>
@@ -633,7 +633,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="unE-ey-ptR">
-                                        <rect key="frame" x="0.0" y="141.66666666666669" width="333" height="610.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="141.66666666666671" width="333" height="492.33333333333326"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -668,12 +668,154 @@
             <objects>
                 <viewController id="2jA-ka-hxj" customClass="HikePeakEntryController" customModule="Planinski_dnevnik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ALe-ny-cy2">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qq-X3-NLm">
+                                <rect key="frame" x="10" y="89" width="353" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dodaj vzpon » Vrh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="567-8D-ybN">
+                                        <rect key="frame" x="48" y="0.0" width="305" height="35"/>
+                                        <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="24"/>
+                                        <color key="textColor" name="Text Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ltg-st-dS2">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="dCv-pg-Dfy"/>
+                                            <constraint firstAttribute="width" constant="42" id="uYq-Lu-lWL"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Back Icon"/>
+                                        <connections>
+                                            <action selector="backButtonPressed" destination="5eO-8E-a7V" eventType="touchUpInside" id="T2k-xi-oPZ"/>
+                                            <action selector="backButtonPressed" destination="2jA-ka-hxj" eventType="touchUpInside" id="z9J-dQ-JK1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="567-8D-ybN" firstAttribute="leading" secondItem="Ltg-st-dS2" secondAttribute="trailing" constant="6" id="0MS-MB-V38"/>
+                                    <constraint firstAttribute="bottom" secondItem="567-8D-ybN" secondAttribute="bottom" id="2Fg-jI-7MH"/>
+                                    <constraint firstItem="Ltg-st-dS2" firstAttribute="leading" secondItem="1Qq-X3-NLm" secondAttribute="leading" id="9Wo-LQ-7PO"/>
+                                    <constraint firstItem="567-8D-ybN" firstAttribute="top" secondItem="1Qq-X3-NLm" secondAttribute="top" id="GxM-8q-l83"/>
+                                    <constraint firstAttribute="trailing" secondItem="567-8D-ybN" secondAttribute="trailing" id="Lgl-r1-Jnc"/>
+                                    <constraint firstItem="567-8D-ybN" firstAttribute="top" secondItem="1Qq-X3-NLm" secondAttribute="top" id="OGT-C7-BJb"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ltg-st-dS2" secondAttribute="bottom" id="o86-7f-tEL"/>
+                                    <constraint firstItem="Ltg-st-dS2" firstAttribute="top" secondItem="1Qq-X3-NLm" secondAttribute="top" id="tpe-of-Lqa"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jwm-4c-4nX">
+                                <rect key="frame" x="30" y="144" width="333" height="340"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HQA-lt-UPd">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Izberite ali vnesite ime vrha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsk-cg-kwa">
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="30"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhX-XQ-gQJ" customClass="DropdownTextField" customModule="Planinski_dnevnik" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="40" width="333" height="40"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="ZXk-2W-BJs"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Triglav"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="gh5-aX-Wpc"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bQq-e7-1ne">
+                                        <rect key="frame" x="0.0" y="100" width="333" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nadmorska višina v metrih" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYf-we-4Wl">
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="34"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2864" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ony-Pe-BAS">
+                                                <rect key="frame" x="0.0" y="44" width="333" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="ztA-f1-oek"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <action selector="textFieldTextChanged" destination="5eO-8E-a7V" eventType="editingChanged" id="5Wg-wh-GN9"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="8zO-mu-7yU"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="oMU-bX-aig">
+                                        <rect key="frame" x="0.0" y="200" width="333" height="80"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Država" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuG-TS-M9c">
+                                                <rect key="frame" x="0.0" y="0.0" width="333" height="31"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdR-yC-ti7" customClass="DropdownTextField" customModule="Planinski_dnevnik" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="40" width="333" height="40"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Kag-e6-hyt"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Slovenija"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="ste-sP-NrG"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKT-y7-meb">
+                                        <rect key="frame" x="0.0" y="300" width="333" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Kwm-G1-GcS"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Naprej">
+                                            <fontDescription key="titleFontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addHikePressed:" destination="5eO-8E-a7V" eventType="touchUpInside" id="q4a-z4-aOJ"/>
+                                            <action selector="nextButtonPressed" destination="2jA-ka-hxj" eventType="touchUpInside" id="GDm-KM-Wnd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qyl-3B-M7b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jwm-4c-4nX" firstAttribute="leading" secondItem="qyl-3B-M7b" secondAttribute="leading" constant="30" id="8nI-y9-fgz"/>
+                            <constraint firstItem="1Qq-X3-NLm" firstAttribute="leading" secondItem="qyl-3B-M7b" secondAttribute="leading" constant="10" id="Pz3-4r-YD4"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="jwm-4c-4nX" secondAttribute="bottom" id="Qe3-Ff-TSz"/>
+                            <constraint firstItem="1Qq-X3-NLm" firstAttribute="top" secondItem="qyl-3B-M7b" secondAttribute="top" constant="30" id="byf-s7-AfT"/>
+                            <constraint firstItem="qyl-3B-M7b" firstAttribute="trailing" secondItem="jwm-4c-4nX" secondAttribute="trailing" constant="30" id="ef1-jh-b8S"/>
+                            <constraint firstItem="qyl-3B-M7b" firstAttribute="trailing" secondItem="1Qq-X3-NLm" secondAttribute="trailing" constant="30" id="obt-9i-Xhh"/>
+                            <constraint firstItem="jwm-4c-4nX" firstAttribute="top" secondItem="1Qq-X3-NLm" secondAttribute="bottom" constant="20" id="wrx-zt-hEw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5dz-HD-OSQ"/>
+                    <connections>
+                        <outlet property="peakAltitudeField" destination="ony-Pe-BAS" id="FHC-Fd-Xj9"/>
+                        <outlet property="peakCountryDropdown" destination="KdR-yC-ti7" id="FIL-aK-rRh"/>
+                        <outlet property="peakNameDropdown" destination="jhX-XQ-gQJ" id="uqx-zx-mNS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSW-DV-J2H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

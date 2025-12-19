@@ -1,10 +1,7 @@
 import Foundation
 
 class SettingsHelper {
-    private struct SettingsBundleKeys {
-        static let ApiUrlKey = "api_url"
-    }
-    
+
     /**
      Registers the default values from Settings.bundle
      */
@@ -22,9 +19,12 @@ class SettingsHelper {
         }
     }
     
-    static func getApiUrl() -> String {
-        let url : String? = UserDefaults.standard.string(forKey: SettingsBundleKeys.ApiUrlKey)
-        let defaultUrl = Bundle.main.object(forInfoDictionaryKey: "DEFAULT_SERVER_IP") as? String
-        return url != nil ? url! : (defaultUrl != nil ? defaultUrl! : "http://localhost:3000")
+    static func getBackendUrl() -> String {
+        // prioriteta: settings > info.plist (Env.xcconfig)
+        let settingsKey = UserDefaults.standard.string(forKey: "backend_url")
+        if let key = settingsKey, !key.isEmpty {
+            return key
+        }
+        return Bundle.main.object(forInfoDictionaryKey: "BACKEND_URL") as? String ?? "http://127.0.0.1"
     }
 }

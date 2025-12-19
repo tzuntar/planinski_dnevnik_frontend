@@ -1,6 +1,6 @@
 import Foundation
 
-public let APIURL = "http://192.168.0.64:3000"//SettingsHelper.getApiUrl()
+public let APIURL = SettingsHelper.getBackendUrl()
 
 struct Token: Codable {
     let access_token: String

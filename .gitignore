@@ -4,6 +4,7 @@
 .DS_STORE
 
 Keys.xcconfig
+Env.xcconfig
 
 ## User settings
 xcuserdata/

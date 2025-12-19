@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Aplikacija potrebuje vašo lokacijo za prikaz trenutnega vremena</string>
-	<key>CFBundleIdentifier</key>
-	<string></string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -19,8 +15,6 @@
 			</array>
 		</dict>
 	</array>
-	<key>DEFAULT_SERVER_IP</key>
-	<string>http://$(DEFAULT_SERVER_IP)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Shrikhand.ttf</string>
@@ -46,5 +40,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>WEATHER_API_KEY</key>
+	<string>$(WEATHER_API_KEY)</string>
 </dict>
 </plist>

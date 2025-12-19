@@ -153,15 +153,17 @@
 /* Begin XCBuildConfiguration section */
 		2AF8CE2C2EB5455C005D9E86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AFC774D2EBD35B7004CCA52 /* Env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Planinski dnevnik/Planinski dnevnik.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HHSLTFTMGC;
+				DEVELOPMENT_TEAM = 6H7ZBTZ9NS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Planinski dnevnik/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Aplikacija potrebuje vašo lokacijo za prikaz trenutnega vremena";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -189,15 +191,17 @@
 		};
 		2AF8CE2D2EB5455C005D9E86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AFC774D2EBD35B7004CCA52 /* Env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Planinski dnevnik/Planinski dnevnik.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HHSLTFTMGC;
+				DEVELOPMENT_TEAM = 6H7ZBTZ9NS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Planinski dnevnik/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Aplikacija potrebuje vašo lokacijo za prikaz trenutnega vremena";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -225,6 +229,7 @@
 		};
 		2AF8CE2E2EB5455C005D9E86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AFC774D2EBD35B7004CCA52 /* Env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -288,6 +293,7 @@
 		};
 		2AF8CE2F2EB5455C005D9E86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AFC774D2EBD35B7004CCA52 /* Env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
