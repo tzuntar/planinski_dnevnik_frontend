@@ -18,7 +18,6 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Shrikhand.ttf</string>
-		<string></string>
 		<string>Outfit.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
