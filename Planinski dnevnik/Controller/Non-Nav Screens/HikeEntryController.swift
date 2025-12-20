@@ -6,7 +6,6 @@ class HikeEntryController : UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var viewTitleLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
-    @IBOutlet weak var peakNameField: UITextField!
     @IBOutlet weak var publicPostToggle: UISwitch!
     @IBOutlet weak var weatherToggle: UISwitch!
     @IBOutlet weak var selectedPhotoView: UIImageView!
@@ -16,8 +15,6 @@ class HikeEntryController : UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherIconView: UIImageView!
     
     @IBOutlet weak var currentWeatherLabel: UILabel!
-  
-    private var hikeLogic: HikeLogic?
     
     private var photoPicker: UIImagePickerController?
     private var selectedPhoto: UIImage?
@@ -37,12 +34,11 @@ class HikeEntryController : UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         
         hideKeyboardWhenTappedAround()
-        hikeLogic = HikeLogic(delegate: self)
         
         addHikeButton.isEnabled = false
         selectedPhotoView.isUserInteractionEnabled = true
-        selectedPhotoView.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                                      action: #selector(selectedPhotoPressed)))
+        selectedPhotoView.addGestureRecognizer(UITapGestureRecognizer(
+            target: self, action: #selector(selectedPhotoPressed)))
         initPhotoPicker()
         if existingHike != nil {
             configure(forPost: existingHike!)
@@ -50,7 +46,13 @@ class HikeEntryController : UIViewController, CLLocationManagerDelegate {
         }
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowHikePeakScreen" {
+            guard let data = sender as? HikeEntryData else { return }
+            let vc = segue.destination as! HikePeakEntryController
+            vc.hikeEntryData = data
+        }
+    }
     
     @IBAction func weatherSwitchToggled(_ sender: UISwitch) {
         if sender.isOn {
@@ -157,29 +159,23 @@ class HikeEntryController : UIViewController, CLLocationManagerDelegate {
     @IBAction func addHikePressed(_ sender: UIButton) {
         guard let name = nameField.text,
               let description = descriptionField.text,
-              let weather = currentWeather,
-              let peak = peakNameField.text else { return }
+              // is weather really not null when the toggle is off?
+              let weather = currentWeather else { return }
         
-        sender.isEnabled = false
-        nameField.isEnabled = false
-        descriptionField.isEnabled = false
-        peakNameField.isEnabled = false
-        publicPostToggle.isEnabled = false
-        selectedPhotoView.isUserInteractionEnabled = false
         let entry = HikeEntry(name: name,
                               description: description,
-                              peak: peak,
                               is_public: publicPostToggle.isOn,
                               weather: weather,
-                              user_id: AuthManager.shared.session!.user.id)
+                              peak: nil)
         guard let selectedPhoto = selectedPhoto else { return }
-        hikeLogic!.postHike(with: entry, photo: selectedPhoto)
+        //hikeLogic!.postHike(with: entry, photo: selectedPhoto)
+        performSegue(withIdentifier: "ShowHikePeakScreen",
+                     sender: HikeEntryData(hikeEntry: entry, hikePhoto: selectedPhoto))
     }
 
     @IBAction func textFieldTextChanged() {
         addHikeButton.isEnabled = !nameField.text!.isEmpty
             && !descriptionField.text!.isEmpty
-            && !peakNameField.text!.isEmpty
             && selectedPhoto != nil
     }
 }
@@ -214,26 +210,6 @@ extension HikeEntryController : UIImagePickerControllerDelegate, UINavigationCon
         selectedPhoto = photo
         selectedPhotoView.image = photo
         self.textFieldTextChanged() // to re-check for selected photo and enable the submit button
-    }
-}
-
-// MARK: - Add Hike Delegate
-extension HikeEntryController : AddHikeDelegate {
-    func didAddHike(_ post: Post) {
-        self.dismiss(animated: true)
-    }
-    
-    func didPostProgressChange(toFraction fractionCompleted: Double) {
-        print("Upload progress: \(fractionCompleted)")
-    }
-    
-    func didAddingFailWithError(_ error: any Error) {
-        addHikeButton.isEnabled = true
-        nameField.isEnabled = true
-        descriptionField.isEnabled = true
-        peakNameField.isEnabled = true
-        publicPostToggle.isEnabled = true
-        selectedPhotoView.isUserInteractionEnabled = true
     }
 }
 

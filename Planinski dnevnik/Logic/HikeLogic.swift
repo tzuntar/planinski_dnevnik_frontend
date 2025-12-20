@@ -10,10 +10,15 @@ protocol AddHikeDelegate {
 struct HikeEntry: Encodable {
     let name: String?
     let description: String?
-    let peak: String?
     let is_public: Bool?
-    let weather:String?
-    let user_id: Int?
+    let weather: String?
+    let peak: PeakEntry?
+}
+
+struct PeakEntry: Encodable {
+    let name: String?
+    let altitude: Int?
+    let country_id: Int?
 }
 
 enum AddHikeError: Error, CustomStringConvertible {

@@ -30,4 +30,18 @@ class Post: Codable {
     let photo_path: String
     let weather: String?
     let user: User?
+    let peak: Peak?
+}
+
+struct Peak: Codable {
+    let id: Int
+    let name: String
+    let altitude: Int
+    let country_id: Int?
+    let country: String?
+}
+
+struct Country: Codable {
+    let id: Int
+    let name: String
 }
