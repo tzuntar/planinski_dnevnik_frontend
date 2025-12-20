@@ -44,7 +44,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="File Pending" translatesAutoresizingMaskIntoConstraints="NO" id="0Lk-Kq-F8I">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="File Pending" translatesAutoresizingMaskIntoConstraints="NO" id="0Lk-Kq-F8I">
                                 <rect key="frame" x="0.0" y="36" width="393" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="bc1-df-WW1"/>
