@@ -6,6 +6,7 @@ class ProfileViewController : UIViewController {
     
     @IBOutlet weak var bioTextBox: UITextField!
     @IBOutlet weak var displayNameLabel: UILabel!
+    @IBOutlet weak var changePasswordButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
     
     private lazy var userLogic = UserLogic(delegatingActionsTo: self)
@@ -26,6 +27,9 @@ class ProfileViewController : UIViewController {
     
     }
     
+    @IBAction func changePasswordButtonPressed(_ sender: UIButton) {
+        
+    }
     
     @IBAction func bioTextFieldEditingDidEnd(_ sender: UITextField) {
         
