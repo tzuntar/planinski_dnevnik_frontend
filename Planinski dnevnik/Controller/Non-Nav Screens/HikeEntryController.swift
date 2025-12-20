@@ -102,7 +102,9 @@ class HikeEntryController : UIViewController {
         guard let selectedPhoto = selectedPhoto else { return }
 
         performSegue(withIdentifier: "ShowHikePeakScreen",
-                     sender: HikeEntryData(hikeEntry: entry, hikePhoto: selectedPhoto))
+                     sender: HikeEntryData(hikeEntry: entry,
+                                           hikePhoto: selectedPhoto,
+                                           existingPost: existingHike != nil))
     }
 
     @IBAction func textFieldTextChanged() {

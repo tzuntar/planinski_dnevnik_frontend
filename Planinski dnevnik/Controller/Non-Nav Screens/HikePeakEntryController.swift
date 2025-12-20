@@ -5,8 +5,8 @@ struct HikeEntryData {
     var hikeEntry: HikeEntry?
     /** Hike photo from the previous step */
     var hikePhoto: UIImage?
-    /** Should be set if editing an existing post */
-    var existingPost: Post?
+    /** Whether this is an existing post or a new one */
+    var existingPost: Bool? = false
 }
 
 class HikePeakEntryController: UIViewController {
@@ -38,17 +38,19 @@ class HikePeakEntryController: UIViewController {
             self.peakLogic?.fetchPeaks()
             self.peakLogic?.fetchCountries()
         }
-        
-        if let existingPost = hikeEntryData?.existingPost {
-            configure(forPost: existingPost)
+
+        if hikeEntryData?.existingPost == true, let entry = hikeEntryData?.hikeEntry {
+            configure(forEntry: entry)
             viewTitleLabel.text = "Uredi vzpon » Vrh"
         }
     }
     
-    func configure(forPost post: Post) {
-        guard let existingPostPeak = post.peak else { return }
-        peakNameDropdown.text = existingPostPeak.name
-        peakAltitudeField.text = String(existingPostPeak.altitude)
+    func configure(forEntry entry: HikeEntry) {
+        guard let existingPostPeak = entry.peak,
+              let peakName = existingPostPeak.name,
+              let peakAlt = existingPostPeak.altitude else { return }
+        peakNameDropdown.text = peakName
+        peakAltitudeField.text = String(peakAlt)
         // country gets to be set in the delegate below as the data for
         // the country names might not have loaded yet (async)
     }
@@ -92,7 +94,7 @@ extension HikePeakEntryController: PeakLogicDelegate {
             self.existingCountries = countries
             self.peakCountryDropdown.options = self.existingCountries!.values.compactMap { $0 }
             // since we have the names we can now load the country name for an existing post
-            if let countryId = self.hikeEntryData?.existingPost?.peak?.country_id,
+            if let countryId = self.hikeEntryData?.hikeEntry?.peak?.country_id,
                let countryName = self.existingCountries?[countryId] {
                 self.peakCountryDropdown.text = countryName
             }
