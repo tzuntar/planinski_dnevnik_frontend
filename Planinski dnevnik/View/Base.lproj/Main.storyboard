@@ -766,6 +766,7 @@
                         <outlet property="peakAltitudeField" destination="ony-Pe-BAS" id="FHC-Fd-Xj9"/>
                         <outlet property="peakCountryDropdown" destination="KdR-yC-ti7" id="FIL-aK-rRh"/>
                         <outlet property="peakNameDropdown" destination="jhX-XQ-gQJ" id="uqx-zx-mNS"/>
+                        <outlet property="viewTitleLabel" destination="567-8D-ybN" id="Iix-FV-fTE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qSW-DV-J2H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

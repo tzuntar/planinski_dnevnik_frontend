@@ -89,7 +89,8 @@ class HikeEntryController : UIViewController {
         let peakEntry: PeakEntry? = (existingHike != nil && existingHike!.peak != nil)
             ? PeakEntry(name: existingHike!.peak!.name,
                         altitude: existingHike!.peak!.altitude,
-                        country_id: existingHike!.peak!.country_id)
+                        country_id: existingHike!.peak!.country_id,
+                        country: nil /* inferred from ID on b/e */)
             : nil
 
         let entry = HikeEntry(name: name,

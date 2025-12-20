@@ -11,9 +11,12 @@ struct HikeEntryData {
 
 class HikePeakEntryController: UIViewController {
     // MARK: - Outlets
+    @IBOutlet weak var viewTitleLabel: UILabel!
+
     @IBOutlet weak var peakNameDropdown: DropdownTextField!
     @IBOutlet weak var peakAltitudeField: UITextField!
     @IBOutlet weak var peakCountryDropdown: DropdownTextField!
+
     @IBOutlet weak var nextButton: UIButton!
     
     // MARK: - Instance vars
@@ -36,12 +39,18 @@ class HikePeakEntryController: UIViewController {
             self.peakLogic?.fetchCountries()
         }
         
-        if let existingPostPeak = hikeEntryData?.existingPost?.peak {
-            peakNameDropdown.text = existingPostPeak.name
-            peakAltitudeField.text = String(existingPostPeak.altitude)
-            // country gets to be set in the delegate below as the data for
-            // the country names might not have loaded yet (async)
+        if let existingPost = hikeEntryData?.existingPost {
+            configure(forPost: existingPost)
+            viewTitleLabel.text = "Uredi vzpon » Vrh"
         }
+    }
+    
+    func configure(forPost post: Post) {
+        guard let existingPostPeak = post.peak else { return }
+        peakNameDropdown.text = existingPostPeak.name
+        peakAltitudeField.text = String(existingPostPeak.altitude)
+        // country gets to be set in the delegate below as the data for
+        // the country names might not have loaded yet (async)
     }
     
     // MARK: - IBActions
@@ -54,7 +63,8 @@ class HikePeakEntryController: UIViewController {
         let peakEntry = PeakEntry(
             name: peakNameDropdown.text,
             altitude: Int(peakAltitudeField.text ?? "0"),
-            country_id: nil
+            country_id: nil, /* inferred from the country name on b/e */
+            country: peakCountryDropdown.text
         )
         let entry = HikeEntry(
             name: hikeEntryData?.hikeEntry?.name,

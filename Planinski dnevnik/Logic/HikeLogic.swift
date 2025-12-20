@@ -19,6 +19,7 @@ struct PeakEntry: Encodable {
     let name: String?
     let altitude: Int?
     let country_id: Int?
+    let country: String?
 }
 
 enum AddHikeError: Error, CustomStringConvertible {
