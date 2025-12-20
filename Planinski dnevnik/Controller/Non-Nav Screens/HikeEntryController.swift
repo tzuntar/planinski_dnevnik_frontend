@@ -1,45 +1,47 @@
 import UIKit
 import CoreLocation
 
-class HikeEntryController : UIViewController, CLLocationManagerDelegate {
-    
+class HikeEntryController : UIViewController {
+
+    // MARK: - Outlets
     @IBOutlet weak var viewTitleLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var publicPostToggle: UISwitch!
     @IBOutlet weak var weatherToggle: UISwitch!
     @IBOutlet weak var selectedPhotoView: UIImageView!
-    @IBOutlet weak var addHikeButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
 
     @IBOutlet weak var currentWeatherField: UILabel!
     @IBOutlet weak var weatherIconView: UIImageView!
-    
     @IBOutlet weak var currentWeatherLabel: UILabel!
-    
+
+    // MARK: - Instance vars
     private var photoPicker: UIImagePickerController?
     private var selectedPhoto: UIImage?
 
-    // used when editing an existing post; should be unset on new posts
+    /** Used when editing an existing post; should be unset on new posts **/
     var existingHike: Post?
-    
+
     //za lokacijo
     let locationManager = CLLocationManager()
     let weatherLogic = WeatherLogic()
     var currentWeather: String?
-
+    
+    // MARK: - View Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        hideKeyboardWhenTappedAround()
+        nextButton.isEnabled = false
+    
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        hideKeyboardWhenTappedAround()
-        
-        addHikeButton.isEnabled = false
         selectedPhotoView.isUserInteractionEnabled = true
         selectedPhotoView.addGestureRecognizer(UITapGestureRecognizer(
             target: self, action: #selector(selectedPhotoPressed)))
         initPhotoPicker()
+
         if existingHike != nil {
             configure(forPost: existingHike!)
             viewTitleLabel.text = "Uredi vzpon"
@@ -53,130 +55,144 @@ class HikeEntryController : UIViewController, CLLocationManagerDelegate {
             vc.hikeEntryData = data
         }
     }
-    
-    @IBAction func weatherSwitchToggled(_ sender: UISwitch) {
-        if sender.isOn {
-                currentWeatherField.isHidden = false
-                currentWeatherLabel.isHidden = false
-                weatherIconView.isHidden = false
-            
-                currentWeatherField.text = "Nalagam..."
-            
-                locationManager.requestLocation()
-                
-             
-            } else {
-                currentWeatherField.isHidden = true
-                currentWeatherLabel.isHidden = true
-                weatherIconView.isHidden = true
-                
-                currentWeatherField.text = ""
-                currentWeather = ""
-            }
-    }
-    
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-            if status == .authorizedWhenInUse || status == .authorizedAlways {
-                locationManager.requestLocation()
-                weatherToggle.isEnabled = true
-                weatherToggle.isOn = true
-                currentWeatherField.isHidden = false
-                weatherIconView.isHidden = false
-                currentWeatherField.text = "Nalagam..."
-                currentWeatherLabel.isHidden = false
-            } else {
-                weatherToggle.isOn = false
-                weatherToggle.isEnabled = false
-                weatherIconView.isHidden = true
-                currentWeatherField.isHidden = true
-                currentWeatherField.text = ""
-                currentWeatherLabel.isHidden = true
-            }
-        }
-    
-    //ko dobi koordinate
-        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            if let location = locations.first {
-                // kliče vreme z dobljenimi koordinatami
-                weatherLogic.fetchWeather(lat: location.coordinate.latitude, lon: location.coordinate.longitude) { [weak self] weatherInfo in
-                    
-                    DispatchQueue.main.async {
-                        if let responseWeather = weatherInfo {
-                            self?.currentWeather = responseWeather
-                            self?.displayWeather(from: responseWeather)
-                        } else {
-                            self?.currentWeather = nil
-                            self?.currentWeatherField.text = "Napaka!"
-                        }
-                    }
-                }
-            }
-        }
-    
-    //brez tega ocitno ne dela
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-            print("Napaka pri pridobivanju lokacije: \(error)")
-    }
-    
-    func displayWeather(from dataString: String) {
-            let parts = dataString.components(separatedBy: ";")
-            
-            if parts.count >= 3 {
-                // per partes ;))
-                let description = parts[0]
-                let temperature = parts[1]
-                let iconURL = parts[2]
-                
-                currentWeatherField.text = "\(description), \(temperature)°C"
-                
-                weatherIconView.isHidden = false
-                weatherIconView.loadFrom(url: iconURL)
-                
-            } else {
-                print("Napaka: Nepravilen format podatkov o vremenu.")
-            }
-        }
-    
+
+    /** Configure for an existing post */
     func configure(forPost post: Post) {
-        // TODO: Tobija
         existingHike = post
+
         nameField.text = post.name
         descriptionField.text = post.description
-        //publicPostToggle.isOn = post.is_public
-        selectedPhotoView.loadFrom(URLAddress: "\(APIURL)/\(post.photo_path)")
-        addHikeButton.isEnabled = true
+        publicPostToggle.isOn = post.is_public == 1
+        if let weather = post.weather {
+            weatherToggle.isOn = true
+            displayWeather(from: weather)
+        } else {
+            weatherToggle.isOn = false
+        }
+    
+        let imageUrl = "\(APIURL)/\(post.photo_path)"
+        selectedPhotoView.loadFrom(URLAddress: imageUrl)
+        selectedPhoto = selectedPhotoView.image
+    
+        nextButton.isEnabled = true
     }
-
+    
+    // MARK: - IBActions
     @IBAction func backButtonPressed() {
         self.dismiss(animated: true)
+    }
+    
+    @IBAction func nextButtonPressed(_ sender: UIButton) {
+        guard let name = nameField.text,
+              let description = descriptionField.text else { return }
+
+        let peakEntry: PeakEntry? = (existingHike != nil && existingHike!.peak != nil)
+            ? PeakEntry(name: existingHike!.peak!.name,
+                        altitude: existingHike!.peak!.altitude,
+                        country_id: existingHike!.peak!.country_id)
+            : nil
+
+        let entry = HikeEntry(name: name,
+                              description: description,
+                              is_public: publicPostToggle.isOn,
+                              weather: currentWeather,
+                              peak: peakEntry)
+
+        guard let selectedPhoto = selectedPhoto else { return }
+
+        performSegue(withIdentifier: "ShowHikePeakScreen",
+                     sender: HikeEntryData(hikeEntry: entry, hikePhoto: selectedPhoto))
+    }
+
+    @IBAction func textFieldTextChanged() {
+        nextButton.isEnabled = !nameField.text!.isEmpty
+            && !descriptionField.text!.isEmpty
+            && selectedPhoto != nil
+    }
+
+    @IBAction func weatherSwitchToggled(_ sender: UISwitch) {
+        if sender.isOn {
+            currentWeatherField.isHidden = false
+            currentWeatherLabel.isHidden = false
+            weatherIconView.isHidden = false
+            currentWeatherField.text = "Nalaganje..."
+            locationManager.requestLocation()
+        } else {
+            currentWeatherField.isHidden = true
+            currentWeatherLabel.isHidden = true
+            weatherIconView.isHidden = true
+            currentWeatherField.text = ""
+            currentWeather = ""
+        }
     }
     
     @objc func selectedPhotoPressed() {
         showPhotoPicker()
     }
 
-    @IBAction func addHikePressed(_ sender: UIButton) {
-        guard let name = nameField.text,
-              let description = descriptionField.text,
-              // is weather really not null when the toggle is off?
-              let weather = currentWeather else { return }
+    // MARK: - Helper Methods
+    private func displayWeather(from dataString: String) {
+        let parts = dataString.components(separatedBy: ";")
         
-        let entry = HikeEntry(name: name,
-                              description: description,
-                              is_public: publicPostToggle.isOn,
-                              weather: weather,
-                              peak: nil)
-        guard let selectedPhoto = selectedPhoto else { return }
-        //hikeLogic!.postHike(with: entry, photo: selectedPhoto)
-        performSegue(withIdentifier: "ShowHikePeakScreen",
-                     sender: HikeEntryData(hikeEntry: entry, hikePhoto: selectedPhoto))
+        if parts.count >= 3 {
+            // per partes ;))
+            let description = parts[0]
+            let temperature = parts[1]
+            let iconURL = parts[2]
+            
+            currentWeatherField.text = "\(description), \(temperature)°C"
+            
+            weatherIconView.isHidden = false
+            weatherIconView.loadFrom(url: iconURL)
+            
+        } else {
+            print("Napaka: Nepravilen format podatkov o vremenu.")
+        }
+    }
+}
+
+// MARK: - Location Manager Delegate
+extension HikeEntryController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse || status == .authorizedAlways {
+            locationManager.requestLocation()
+            weatherToggle.isEnabled = true
+            weatherToggle.isOn = true
+            currentWeatherField.isHidden = false
+            weatherIconView.isHidden = false
+            currentWeatherField.text = "Nalaganje..."
+            currentWeatherLabel.isHidden = false
+        } else {
+            weatherToggle.isOn = false
+            weatherToggle.isEnabled = false
+            weatherIconView.isHidden = true
+            currentWeatherField.isHidden = true
+            currentWeatherField.text = ""
+            currentWeatherLabel.isHidden = true
+        }
     }
 
-    @IBAction func textFieldTextChanged() {
-        addHikeButton.isEnabled = !nameField.text!.isEmpty
-            && !descriptionField.text!.isEmpty
-            && selectedPhoto != nil
+    //ko dobi koordinate
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else { return }
+        // kliče vreme z dobljenimi koordinatami
+        weatherLogic.fetchWeather(lat: location.coordinate.latitude, lon: location.coordinate.longitude) { [weak self] weatherInfo in
+            
+            DispatchQueue.main.async {
+                if let responseWeather = weatherInfo {
+                    self?.currentWeather = responseWeather
+                    self?.displayWeather(from: responseWeather)
+                } else {
+                    self?.currentWeather = nil
+                    self?.currentWeatherField.text = "Napaka"
+                }
+            }
+        }
+    }
+
+    //brez tega ocitno ne dela
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Napaka pri pridobivanju lokacije: \(error)")
     }
 }
 
@@ -216,10 +232,7 @@ extension HikeEntryController : UIImagePickerControllerDelegate, UINavigationCon
 // MARK: - Load image from url (ne obstaja loadFrom(url), to sm pa iz nek prekopirov lp mark)
 extension UIImageView{
     func loadFrom(url: String){
-        
-        guard let url = URL(string: url) else {
-            return
-        }
+        guard let url = URL(string: url) else { return }
         DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url){
                 DispatchQueue.main.async {

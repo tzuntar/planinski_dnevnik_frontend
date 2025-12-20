@@ -204,7 +204,7 @@
                                             <fontDescription key="titleFontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="addHikePressed:" destination="5eO-8E-a7V" eventType="touchUpInside" id="QBJ-og-7Yz"/>
+                                            <action selector="nextButtonPressed:" destination="5eO-8E-a7V" eventType="touchUpInside" id="QBJ-og-7Yz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -222,11 +222,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addHikeButton" destination="CQw-oA-avF" id="DM2-bh-QiK"/>
                         <outlet property="currentWeatherField" destination="yks-V0-xh2" id="Cdd-tX-03o"/>
                         <outlet property="currentWeatherLabel" destination="I4F-NK-jkt" id="7oc-Vd-ig8"/>
                         <outlet property="descriptionField" destination="Mbf-xC-7YJ" id="fej-eu-T2E"/>
                         <outlet property="nameField" destination="iQc-YU-YfK" id="LSU-54-UWh"/>
+                        <outlet property="nextButton" destination="CQw-oA-avF" id="DM2-bh-QiK"/>
                         <outlet property="publicPostToggle" destination="SCe-rn-lS8" id="Agi-SD-Npb"/>
                         <outlet property="selectedPhotoView" destination="OtG-LA-e8d" id="BaT-Ks-CNb"/>
                         <outlet property="viewTitleLabel" destination="h17-hO-PBk" id="dZG-5b-phv"/>
@@ -742,8 +742,8 @@
                                             <fontDescription key="titleFontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="addHikePressed:" destination="5eO-8E-a7V" eventType="touchUpInside" id="q4a-z4-aOJ"/>
                                             <action selector="nextButtonPressed" destination="2jA-ka-hxj" eventType="touchUpInside" id="GDm-KM-Wnd"/>
+                                            <action selector="nextButtonPressed:" destination="5eO-8E-a7V" eventType="touchUpInside" id="q4a-z4-aOJ"/>
                                         </connections>
                                     </button>
                                 </subviews>

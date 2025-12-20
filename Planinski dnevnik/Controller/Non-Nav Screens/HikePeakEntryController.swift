@@ -39,9 +39,8 @@ class HikePeakEntryController: UIViewController {
         if let existingPostPeak = hikeEntryData?.existingPost?.peak {
             peakNameDropdown.text = existingPostPeak.name
             peakAltitudeField.text = String(existingPostPeak.altitude)
-            if let country = existingPostPeak.country {
-                peakCountryDropdown.text = country
-            }
+            // country gets to be set in the delegate below as the data for
+            // the country names might not have loaded yet (async)
         }
     }
     
@@ -82,11 +81,16 @@ extension HikePeakEntryController: PeakLogicDelegate {
         DispatchQueue.main.async {
             self.existingCountries = countries
             self.peakCountryDropdown.options = self.existingCountries!.values.compactMap { $0 }
+            // since we have the names we can now load the country name for an existing post
+            if let countryId = self.hikeEntryData?.existingPost?.peak?.country_id,
+               let countryName = self.existingCountries?[countryId] {
+                self.peakCountryDropdown.text = countryName
+            }
         }
     }
     
     func didFetchingPeaksFailWithError(_ error: String) {
-        print("Unable to fetch peak: \(error)")
+        print("Unable to fetch peaks: \(error)")
     }
     
     func didFetchingCountriesFailWithError(_ error: String) {

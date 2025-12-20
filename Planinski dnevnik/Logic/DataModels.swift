@@ -31,6 +31,7 @@ class Post: Codable {
     let weather: String?
     let user: User?
     let peak: Peak?
+    let is_public: Int?
 }
 
 struct Peak: Codable {
@@ -38,7 +39,6 @@ struct Peak: Codable {
     let name: String
     let altitude: Int
     let country_id: Int?
-    let country: String?
 }
 
 struct Country: Codable {
