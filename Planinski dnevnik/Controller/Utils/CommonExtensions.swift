@@ -16,6 +16,23 @@ extension UIImageView {
             }
         }
     }
+    
+    func loadFrom(URLAddress address: String, completion: @escaping (UIImage?) -> Void) {
+        guard let url = URL(string: address) else {
+            completion(nil)
+            return
+        }
+        DispatchQueue.global(qos: .background).async {
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.image = loadedImage
+                        completion(loadedImage)
+                    }
+                }
+            }
+        }
+    }
 }
 
 extension UITableViewCell {

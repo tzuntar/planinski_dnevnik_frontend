@@ -69,6 +69,7 @@ class HikePeakEntryController: UIViewController {
             country: peakCountryDropdown.text
         )
         let entry = HikeEntry(
+            id: hikeEntryData?.hikeEntry?.id,
             name: hikeEntryData?.hikeEntry?.name,
             description: hikeEntryData?.hikeEntry?.description,
             is_public: hikeEntryData?.hikeEntry?.is_public,
@@ -76,7 +77,11 @@ class HikePeakEntryController: UIViewController {
             peak: peakEntry
         )
         nextButton.isEnabled = false
-        hikeLogic!.postHike(with: entry, photo: (hikeEntryData?.hikePhoto)!)
+        if hikeEntryData?.existingPost == true {
+            hikeLogic!.updateHike(withId: (entry.id)!, entry: entry, photo: (hikeEntryData?.hikePhoto)!)
+        } else {
+            hikeLogic!.postHike(with: entry, photo: (hikeEntryData?.hikePhoto)!)
+        }
     }
 }
 

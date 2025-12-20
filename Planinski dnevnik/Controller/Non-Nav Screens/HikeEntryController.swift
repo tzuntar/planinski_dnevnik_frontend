@@ -69,11 +69,12 @@ class HikeEntryController : UIViewController {
         } else {
             weatherToggle.isOn = false
         }
-    
+
         let imageUrl = "\(APIURL)/\(post.photo_path)"
-        selectedPhotoView.loadFrom(URLAddress: imageUrl)
-        selectedPhoto = selectedPhotoView.image
-    
+        selectedPhotoView.loadFrom(URLAddress: imageUrl) { loadedImage in
+            self.selectedPhoto = loadedImage
+        }
+
         nextButton.isEnabled = true
     }
     
@@ -93,11 +94,13 @@ class HikeEntryController : UIViewController {
                         country: nil /* inferred from ID on b/e */)
             : nil
 
-        let entry = HikeEntry(name: name,
-                              description: description,
-                              is_public: publicPostToggle.isOn,
-                              weather: currentWeather,
-                              peak: peakEntry)
+        let entry = HikeEntry(
+            id: existingHike?.id,
+            name: name,
+            description: description,
+            is_public: publicPostToggle.isOn,
+            weather: currentWeather,
+            peak: peakEntry)
 
         guard let selectedPhoto = selectedPhoto else { return }
 

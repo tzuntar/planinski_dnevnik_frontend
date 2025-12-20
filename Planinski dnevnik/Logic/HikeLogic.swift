@@ -8,6 +8,7 @@ protocol AddHikeDelegate {
 }
 
 struct HikeEntry: Encodable {
+    let id: Int?
     let name: String?
     let description: String?
     let is_public: Bool?
@@ -63,6 +64,42 @@ class HikeLogic {
             },
             to: "\(APIURL)/journal_entries",
             method: .post,
+            headers: authHeaders
+        )
+        .uploadProgress(queue: .main) { progress in
+            self.delegate.didPostProgressChange(toFraction: progress.fractionCompleted)
+        }
+        .responseDecodable(of: Post.self) { response in
+            if let safeResponse = response.value {
+                self.delegate.didAddHike(safeResponse)
+                return
+            }
+            if let failure = response.response {
+                self.delegate.didAddingFailWithError(FeedError.unexpected(code: failure.statusCode));
+            }
+        }
+    }
+    
+    func updateHike(withId postId: Int, entry: HikeEntry, photo: UIImage) {
+        guard let entryData = objectToUtf8Data(entry) else { return }
+        guard var authHeaders = AuthManager.shared.getAuthHeaders() else { return }
+        
+        AF.upload(
+            multipartFormData: { multiPart in
+                multiPart.append(
+                    photo.jpegData(compressionQuality: 0.8)!,
+                    withName: "photo",
+                    fileName: "photo.jpg",
+                    mimeType: "image/jpeg"
+                )
+                multiPart.append(
+                    entryData,
+                    withName: "journal_entry",
+                    mimeType: "application/json"
+                )
+            },
+            to: "\(APIURL)/journal_entries/\(postId)",
+            method: .patch,
             headers: authHeaders
         )
         .uploadProgress(queue: .main) { progress in
