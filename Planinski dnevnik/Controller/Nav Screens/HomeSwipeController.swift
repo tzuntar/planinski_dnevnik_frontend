@@ -1,11 +1,10 @@
 // Handles swipe left-right to navigate between screens
 import UIKit
 
-class HomeSwipeController: EZSwipeController {
+class HomeSwipeController: EZSwipeTabController {
 
     override func setupView() {
         super.setupView()
-        navigationBarShouldNotExist = true
         datasource = self
     }
 
@@ -17,7 +16,7 @@ class HomeSwipeController: EZSwipeController {
 
 }
 
-extension HomeSwipeController: EZSwipeControllerDataSource {
+extension HomeSwipeController: EZSwipeTabControllerDataSource {
     func viewControllerData() -> [UIViewController] {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
@@ -27,6 +26,15 @@ extension HomeSwipeController: EZSwipeControllerDataSource {
 
         return [logVC, feedVC, profileVC]
     }
-
+    
+    func tabItemsData() -> [EZSwipeTabItem] {
+        return [
+            // sistemske SF Symbols ikonce
+            EZSwipeTabItem(systemIconName: "book", title: "Moji vzponi"),
+            EZSwipeTabItem(systemIconName: "house", title: "Domača stran"),
+            EZSwipeTabItem(systemIconName: "person", title: "Moj profil")
+        ]
+    }
+    
     func indexOfStartingPage() -> Int { 1 }
 }

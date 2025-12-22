@@ -256,7 +256,7 @@
                                         <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ph1-hh-I6f">
+                                    <button hidden="YES" toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ph1-hh-I6f">
                                         <rect key="frame" x="287" y="0.0" width="76" height="45"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Navigate Right to Feed"/>
@@ -343,8 +343,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CT-uJ-YoV">
                                 <rect key="frame" x="0.0" y="118" width="393" height="45"/>
                                 <subviews>
-                                    <button toolTip="Moji vzponi" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIl-iw-cDl">
-                                        <rect key="frame" x="0.0" y="0.0" width="76" height="45"/>
+                                    <button hidden="YES" toolTip="Moji vzponi" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIl-iw-cDl">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="45"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Log Navigate Left"/>
                                         <connections>
@@ -352,13 +352,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Planinski dnevnik" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaP-rN-6tf">
-                                        <rect key="frame" x="76" y="0.0" width="241" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="45"/>
                                         <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="24"/>
                                         <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button toolTip="Moj profil" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdz-d0-Ccp">
-                                        <rect key="frame" x="317" y="0.0" width="76" height="45"/>
+                                    <button hidden="YES" toolTip="Moj profil" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdz-d0-Ccp">
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="45"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Profile Navigate Right"/>
                                         <connections>
@@ -398,11 +398,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nBz-MF-8Py">
-                                <rect key="frame" x="10" y="59" width="373" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBz-MF-8Py">
+                                <rect key="frame" x="20" y="118" width="353" height="50"/>
                                 <subviews>
-                                    <button toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRk-b1-anj">
+                                    <button hidden="YES" toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRk-b1-anj">
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
@@ -411,16 +410,14 @@
                                             <action selector="navToFeedPressed" destination="Rjk-Yj-Iab" eventType="touchUpInside" id="pVw-ut-zWm"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Moj profil" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ac-dV-bHe">
-                                        <rect key="frame" x="86" y="0.0" width="287" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moj profil" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ac-dV-bHe">
+                                        <rect key="frame" x="0.0" y="0.0" width="126.33333333333333" height="50"/>
                                         <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="24"/>
                                         <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button toolTip="Odjava" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-NQ-JTB">
-                                        <rect key="frame" x="312" y="0.0" width="61" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button toolTip="Odjava" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-NQ-JTB">
+                                        <rect key="frame" x="292" y="0.0" width="61" height="50"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Log Out Icon"/>
                                         <connections>
@@ -428,75 +425,108 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="z4m-NQ-JTB" secondAttribute="trailing" id="1hr-UN-J2g"/>
+                                    <constraint firstAttribute="bottom" secondItem="6Ac-dV-bHe" secondAttribute="bottom" id="HGf-sF-6MD"/>
+                                    <constraint firstItem="6Ac-dV-bHe" firstAttribute="top" secondItem="nBz-MF-8Py" secondAttribute="top" id="IRk-HZ-piQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="bmg-6g-eka"/>
+                                    <constraint firstAttribute="bottom" secondItem="z4m-NQ-JTB" secondAttribute="bottom" id="nWN-xI-DpA"/>
+                                    <constraint firstItem="z4m-NQ-JTB" firstAttribute="top" secondItem="nBz-MF-8Py" secondAttribute="top" id="rxW-u2-NaE"/>
+                                    <constraint firstItem="6Ac-dV-bHe" firstAttribute="leading" secondItem="nBz-MF-8Py" secondAttribute="leading" id="tSE-FK-CuN"/>
+                                </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="YXT-nL-nxY">
-                                <rect key="frame" x="20" y="119" width="189.33333333333334" height="78.333333333333314"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="5OP-N2-y4B">
+                                <rect key="frame" x="20" y="187.99999999999997" width="353" height="353.33333333333326"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="gcG-zB-5hA">
-                                        <rect key="frame" x="0.0" y="0.0" width="37" height="78.333333333333329"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="rI4-nr-Npu">
-                                        <rect key="frame" x="72" y="0.0" width="117.33333333333331" height="78.333333333333329"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="YXT-nL-nxY">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="78.333333333333329"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ime uporabnika" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-uH-qhc">
-                                                <rect key="frame" x="0.0" y="0.0" width="117.33333333333333" height="21.666666666666668"/>
-                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
-                                                <color key="textColor" name="Text Color"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@uporabnik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHZ-bh-VMd">
-                                                <rect key="frame" x="0.0" y="56.666666666666664" width="117.33333333333333" height="21.666666666666664"/>
-                                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
-                                                <color key="textColor" name="Text Color"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User" translatesAutoresizingMaskIntoConstraints="NO" id="gcG-zB-5hA">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="78.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="prr-F7-xOL"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="rI4-nr-Npu">
+                                                <rect key="frame" x="135" y="0.0" width="218" height="78.333333333333329"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ime uporabnika" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-uH-qhc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="218" height="21.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
+                                                        <color key="textColor" name="Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@uporabnik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHZ-bh-VMd">
+                                                        <rect key="frame" x="0.0" y="56.66666666666665" width="218" height="21.666666666666664"/>
+                                                        <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
+                                                        <color key="textColor" name="Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                     </stackView>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Uporabniške nastavitve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIe-3b-Hpa">
-                                <rect key="frame" x="20" y="369" width="353" height="25.333333333333314"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Outfit-Thin_Bold" family="Outfit" pointSize="20"/>
-                                <color key="textColor" name="Text Color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-hq-wl6">
-                                <rect key="frame" x="20" y="232" width="353" height="129"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Input Field Placeholder"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="bioTextFieldEditingDidEnd:" destination="Rjk-Yj-Iab" eventType="editingDidEnd" id="luL-X5-qOs"/>
-                                </connections>
-                            </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o6x-op-pzN">
-                                <rect key="frame" x="20" y="402" width="353" height="34.333333333333314"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFV-l1-4Tk">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34.333333333333336"/>
-                                        <color key="tintColor" name="AccentColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="Spremeni geslo"/>
-                                        <connections>
-                                            <action selector="changePasswordButtonPressed:" destination="Rjk-Yj-Iab" eventType="touchUpInside" id="nhv-wr-90Z"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0cw-aB-lfS">
+                                        <rect key="frame" x="0.0" y="108.33333333333333" width="353" height="140.33333333333337"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uredite opis svojega profila" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHM-Cw-dlZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="25.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Bold" family="Outfit" pointSize="20"/>
+                                                <color key="textColor" name="Text Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Dobrodošli na mojem profilu ..." adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-hq-wl6">
+                                                <rect key="frame" x="0.0" y="40.333333333333371" width="353" height="100"/>
+                                                <color key="backgroundColor" name="Page Background"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="G2O-he-9k0"/>
+                                                </constraints>
+                                                <color key="textColor" name="AccentColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="bioTextFieldEditingDidEnd:" destination="Rjk-Yj-Iab" eventType="editingDidEnd" id="luL-X5-qOs"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="o6x-op-pzN">
+                                        <rect key="frame" x="0.0" y="278.66666666666669" width="353" height="74.666666666666686"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uporabniške nastavitve" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIe-3b-Hpa">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="25.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Bold" family="Outfit" pointSize="20"/>
+                                                <color key="textColor" name="Text Color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFV-l1-4Tk">
+                                                <rect key="frame" x="0.0" y="40.333333333333314" width="353" height="34.333333333333343"/>
+                                                <color key="tintColor" name="AccentColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Spremeni geslo"/>
+                                                <connections>
+                                                    <action selector="changePasswordButtonPressed:" destination="Rjk-Yj-Iab" eventType="touchUpInside" id="nhv-wr-90Z"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ESY-fY-WA1"/>
                         <color key="backgroundColor" name="Page Background"/>
                         <constraints>
-                            <constraint firstItem="ESY-fY-WA1" firstAttribute="trailing" secondItem="o6x-op-pzN" secondAttribute="trailing" constant="20" id="hl8-OQ-jK7"/>
-                            <constraint firstItem="o6x-op-pzN" firstAttribute="leading" secondItem="ESY-fY-WA1" secondAttribute="leading" constant="20" id="sw1-yH-2ye"/>
+                            <constraint firstItem="5OP-N2-y4B" firstAttribute="top" secondItem="nBz-MF-8Py" secondAttribute="bottom" constant="20" id="6fk-DF-H6T"/>
+                            <constraint firstItem="ESY-fY-WA1" firstAttribute="trailing" secondItem="nBz-MF-8Py" secondAttribute="trailing" constant="20" id="PvX-si-Uvc"/>
+                            <constraint firstItem="ESY-fY-WA1" firstAttribute="trailing" secondItem="5OP-N2-y4B" secondAttribute="trailing" constant="20" id="UCm-TQ-erw"/>
+                            <constraint firstItem="nBz-MF-8Py" firstAttribute="leading" secondItem="ESY-fY-WA1" secondAttribute="leading" constant="20" id="a3s-vM-3oZ"/>
+                            <constraint firstItem="5OP-N2-y4B" firstAttribute="leading" secondItem="ESY-fY-WA1" secondAttribute="leading" constant="20" id="aA6-Fx-lah"/>
+                            <constraint firstItem="nBz-MF-8Py" firstAttribute="top" secondItem="ESY-fY-WA1" secondAttribute="top" id="m0L-pv-OMX"/>
                         </constraints>
                     </view>
                     <connections>
@@ -786,9 +816,6 @@
         <image name="User" width="37" height="36"/>
         <namedColor name="AccentColor">
             <color red="0.075999997556209564" green="0.16899999976158142" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Input Field Placeholder">
-            <color red="0.12099999934434891" green="0.16899999976158142" blue="0.082000002264976501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Page Background">
             <color red="0.96799999475479126" green="0.99000000953674316" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
