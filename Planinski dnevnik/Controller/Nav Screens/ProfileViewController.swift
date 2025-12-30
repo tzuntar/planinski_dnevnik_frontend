@@ -4,10 +4,12 @@ class ProfileViewController : UIViewController {
     
     private var currentUser: User?
     
-    @IBOutlet weak var bioTextBox: UITextField!
+    
+    @IBOutlet weak var bioTextBox: UITextView!
     @IBOutlet weak var displayNameLabel: UILabel!
     @IBOutlet weak var changePasswordButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
+
     
     private lazy var userLogic = UserLogic(delegatingActionsTo: self)
     
@@ -17,21 +19,24 @@ class ProfileViewController : UIViewController {
         super.viewDidLoad()
         self.currentUser = AuthManager.shared.session?.user
         
-        bioTextBox.layer.cornerRadius = 8
+        bioTextBox.layer.cornerRadius = 10
         usernameLabel.text = currentUser?.name
         
         let currentBio = currentUser?.bio
         bioTextBox.text = currentBio
         originalBio = currentBio ?? ""
-        // TODO: Fetch image, recent vzponi, display name...
+        // TODO: Fetch image, display name...
+        
+        bioTextBox.delegate = self
     
     }
     
     @IBAction func changePasswordButtonPressed(_ sender: UIButton) {
+        print("changePassword btn pressed")
         
     }
     
-    @IBAction func bioTextFieldEditingDidEnd(_ sender: UITextField) {
+    @IBAction func bioTextFieldEditingDidEnd(_ sender: UITextView) {
         
         guard let newText = sender.text else { return }
                 
@@ -58,14 +63,33 @@ class ProfileViewController : UIViewController {
     }
 }
 
-extension ProfileViewController: UserProfileDelegate {
+
+extension ProfileViewController: UserProfileDelegate, UITextViewDelegate {
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        guard let newText = textView.text else { return }
+        
+        if newText != originalBio {
+            userLogic.updateBio(newBio: newText)
+            originalBio = newText
+        }
+    }
     
     func didLoadUserData(_ user: User) {
         self.currentUser = user
     }
     
     func didUpdateUserData() {
-        //TODO:
+        let alert = UIAlertController(
+            title: "Profile updated",
+            message: "User bio updated.",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title:"OK", style: .default, handler:nil))
+        
+        self.present(alert,animated:true,completion: nil)
+        
     }
     
     func didLoadingFailWithError(_ error: any Error) {
