@@ -17,7 +17,7 @@ class User: Codable {
     let name: String
     let email: String?
     let bio: String?
-    let photo_path: String?
+    let photo_uri: String?
     let posts: [Post]?
 }
 

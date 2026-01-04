@@ -6,6 +6,12 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeName</key>
+			<string></string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
 			<string>INFOPLIST_FILE</string>
 			<key>LSHandlerRank</key>
 			<string>Default</string>
@@ -41,5 +47,7 @@
 	</dict>
 	<key>WEATHER_API_KEY</key>
 	<string>$(WEATHER_API_KEY)</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need access to your camera to take your profile picture.</string>
 </dict>
 </plist>

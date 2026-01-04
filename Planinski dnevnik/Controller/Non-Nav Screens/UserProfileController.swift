@@ -20,6 +20,8 @@ class UserProfileController: UIViewController {
         userPostsTable.dataSource = self
         self.userLogic = UserLogic(delegatingActionsTo: self)
         self.userLogic!.retrieveData(for: userId!)
+        
+        
     }
     
     @IBAction func backButtonPressed() {
@@ -30,8 +32,8 @@ class UserProfileController: UIViewController {
 // MARK: - User Logic Delegate
 extension UserProfileController: UserProfileDelegate {
     func didLoadUserData(_ user: User) {
-        if user.photo_path != nil {
-            userProfilePhoto.loadFrom(URLAddress: "\(APIURL)/\(user.photo_path!)")
+        if user.photo_uri != nil {
+            userProfilePhoto.loadFrom(URLAddress: "\(APIURL)/\(user.photo_uri!)")
         }
         userNameLabel.text = user.name
         userBioLabel.text = user.bio
@@ -42,6 +44,10 @@ extension UserProfileController: UserProfileDelegate {
     
     func didUpdateUserData() {
         //TODO
+    }
+    func didUpdateAvatar(newUrl: String) {
+       print("upload uspešen")
+        self.userProfilePhoto.loadFrom(url: newUrl)
     }
     
     func didLoadingFailWithError(_ error: any Error) {

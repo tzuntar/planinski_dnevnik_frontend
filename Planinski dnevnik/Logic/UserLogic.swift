@@ -13,6 +13,12 @@ protocol UserProfileDelegate {
     func didLoadUserData(_ user: User)
     func didLoadingFailWithError(_ error: Error)
     func didUpdateUserData()
+    func didUpdateAvatar(newUrl: String)
+}
+
+struct AvatarResponse: Decodable {
+    let message: String
+    let photo_uri: String
 }
 
 enum UserProfileError: Error,CustomStringConvertible {
@@ -92,6 +98,40 @@ class UserLogic {
                 }
         }
     
+    func uploadAvatar(image: UIImage) {
+            guard let authHeaders = AuthManager.shared.getAuthHeaders() else {
+                delegate.didLoadingFailWithError(UserProfileError.missingAuthHeaders)
+                return
+            }
+
+            let endpoint = "\(APIURL)/users/avatar"
+
+            guard let imageData = image.jpegData(compressionQuality: 0.5) else {
+                return
+            }
+
+            AF.upload(multipartFormData: { multipartFormData in
+                multipartFormData.append(imageData, withName: "avatar", fileName: "profile.jpg", mimeType: "image/jpeg")
+            }, to: endpoint, method: .post, headers: authHeaders)
+            .validate()
+ 
+            .responseDecodable(of: AvatarResponse.self) { response in
+                
+                switch response.result {
+    
+                case .success(let data):
+                    self.delegate.didUpdateAvatar(newUrl: data.photo_uri)
+                    self.delegate.didUpdateUserData()
+                    
+                case .failure(let error):
+                    if let statusCode = response.response?.statusCode {
+                        self.handleError(forCode: statusCode)
+                    } else {
+                        self.delegate.didLoadingFailWithError(error)
+                    }
+                }
+            }
+        }
     
     private func handleError(forCode responseCode: Int) {
         switch responseCode {
