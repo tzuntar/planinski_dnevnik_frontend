@@ -3,7 +3,7 @@ import UIKit
 class ProfileViewController : UIViewController {
     
     private var currentUser: User?
-    
+
     @IBOutlet weak var profilePictureView: UIImageView!
     @IBOutlet weak var bioTextBox: UITextView!
     @IBOutlet weak var displayNameLabel: UILabel!
@@ -138,8 +138,8 @@ extension ProfileViewController: UserProfileDelegate, UITextViewDelegate {
     
     func didUpdateUserData() {
         let alert = UIAlertController(
-            title: "Profile updated",
-            message: "User bio updated.",
+            title: "Profile changed",
+            message: "Profile has been updated with latest changes.",
             preferredStyle: .alert
         )
         
