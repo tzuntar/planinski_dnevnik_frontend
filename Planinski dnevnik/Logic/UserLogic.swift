@@ -13,6 +13,7 @@ protocol UserProfileDelegate {
     func didLoadUserData(_ user: User)
     func didLoadingFailWithError(_ error: Error)
     func didUpdateUserData()
+    func didChangePasswordSuccessfully()
     func didUpdateAvatar(newUrl: String)
 }
 
@@ -97,6 +98,38 @@ class UserLogic {
                     }
                 }
         }
+    
+    func changePassword(oldP: String, newP: String) {
+        guard let authHeaders = AuthManager.shared.getAuthHeaders() else {
+            delegate.didLoadingFailWithError(UserProfileError.missingAuthHeaders)
+            return
+        }
+
+        let endpoint = "\(APIURL)/change-password/"
+        
+        let parameters: [String: Any] = [
+            "oldPassword": oldP,
+            "newPassword": newP
+        ]
+
+        AF.request(endpoint, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: authHeaders)
+            .validate()
+            .response { response in
+                switch response.result {
+                case .success:
+                    self.delegate.didUpdateUserData()
+                    
+                case .failure(let error):
+                    
+                    if let statusCode = response.response?.statusCode {
+                        
+                        self.handleError(forCode: statusCode)
+                    } else {
+                        self.delegate.didLoadingFailWithError(error)
+                    }
+                }
+            }
+    }
     
     func uploadAvatar(image: UIImage) {
             guard let authHeaders = AuthManager.shared.getAuthHeaders() else {

@@ -83,7 +83,21 @@ class ProfileViewController : UIViewController {
     }
     
     @IBAction func changePasswordButtonPressed(_ sender: UIButton) {
-        print("changePassword btn pressed")
+        let alert = UIAlertController(title: "Sprememba gesla", message: "Vnesite podatke za ponastavitev gesla.", preferredStyle: .alert)
+            
+            alert.addTextField { $0.placeholder = "Staro geslo"; $0.isSecureTextEntry = true }
+            alert.addTextField { $0.placeholder = "Novo geslo"; $0.isSecureTextEntry = true }
+            
+            let action = UIAlertAction(title: "Potrdi", style: .default) { _ in
+                let old = alert.textFields?[0].text ?? ""
+                let new = alert.textFields?[1].text ?? ""
+                
+                self.userLogic.changePassword(oldP: old, newP: new)
+            }
+            
+            alert.addAction(action)
+            alert.addAction(UIAlertAction(title: "Prekliči", style: .cancel))
+            present(alert, animated: true)
         
     }
     
@@ -115,6 +129,7 @@ class ProfileViewController : UIViewController {
 }
 
 
+
 extension ProfileViewController: UserProfileDelegate, UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -124,6 +139,10 @@ extension ProfileViewController: UserProfileDelegate, UITextViewDelegate {
             userLogic.updateBio(newBio: newText)
             originalBio = newText
         }
+    }
+    
+    func didChangePasswordSuccessfully(){
+        return
     }
     
     func didLoadUserData(_ user: User) {
@@ -138,8 +157,8 @@ extension ProfileViewController: UserProfileDelegate, UITextViewDelegate {
     
     func didUpdateUserData() {
         let alert = UIAlertController(
-            title: "Profile changed",
-            message: "Profile has been updated with latest changes.",
+            title: "Profil posodobljen",
+            message: "Nastavitve vašega profila so bile posodobljene.",
             preferredStyle: .alert
         )
         

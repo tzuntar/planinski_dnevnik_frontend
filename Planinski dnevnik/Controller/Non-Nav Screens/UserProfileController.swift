@@ -43,7 +43,10 @@ extension UserProfileController: UserProfileDelegate {
     }
     
     func didUpdateUserData() {
-        //TODO
+        return
+    }
+    func didChangePasswordSuccessfully(){
+        return
     }
     func didUpdateAvatar(newUrl: String) {
        print("upload uspešen")
