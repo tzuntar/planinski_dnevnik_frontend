@@ -1,6 +1,10 @@
 import UIKit
 import CoreLocation
 
+protocol HikeEntryCallbackDelegate {
+    func didSubmitEntry()
+}
+
 class HikeEntryController : UIViewController {
 
     // MARK: - Outlets
@@ -22,6 +26,9 @@ class HikeEntryController : UIViewController {
 
     /** Used when editing an existing post; should be unset on new posts **/
     var existingHike: Post?
+    
+    /** Used to inform the callee of successful submission */
+    var callbackDelegate: HikeEntryCallbackDelegate?
 
     //za lokacijo
     let locationManager = CLLocationManager()
@@ -53,6 +60,7 @@ class HikeEntryController : UIViewController {
             guard let data = sender as? HikeEntryData else { return }
             let vc = segue.destination as! HikePeakEntryController
             vc.hikeEntryData = data
+            vc.callbackDelegate = self.callbackDelegate
         }
     }
 

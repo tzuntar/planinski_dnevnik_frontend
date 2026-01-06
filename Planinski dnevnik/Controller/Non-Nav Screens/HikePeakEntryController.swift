@@ -27,11 +27,15 @@ class HikePeakEntryController: UIViewController {
     
     /** Set from presenting controller to pass data to this controller */
     var hikeEntryData: HikeEntryData?
+    
+    /** Used to inform the callee of successful submission */
+    var callbackDelegate: HikeEntryCallbackDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         hikeLogic = HikeLogic(delegate: self)
         peakLogic = PeakLogic(delegatingActionsTo: self)
+        peakNameDropdown.delegate = self
         
         // do this in the background to not stall the UI
         DispatchQueue.global(qos: .background).async {
@@ -120,6 +124,9 @@ extension HikePeakEntryController: AddHikeDelegate {
     func didAddHike(_ post: Post) {
         self.dismiss(animated: true)
         self.presentingViewController?.dismiss(animated: true)
+        if let delegate = callbackDelegate {
+            delegate.didSubmitEntry()
+        }
     }
     
     func didPostProgressChange(toFraction fractionCompleted: Double) {
@@ -129,5 +136,21 @@ extension HikePeakEntryController: AddHikeDelegate {
     func didAddingFailWithError(_ error: any Error) {
         // TODO: show why it failed
         nextButton.isEnabled = true
+    }
+}
+
+// MARK: - Peak Name Dropdown Delegate
+extension HikePeakEntryController: DropdownTextFieldDelegate {
+    func dropdownTextField(_ dropdownTextField: DropdownTextField, didSelectOption option: String) {
+        guard let peak = existingPeaks?.values.first(where: { $0.name == option }) else { return };
+        peakAltitudeField.text = String(peak.altitude)
+        if let countryId = peak.country_id,
+           let countryName = existingCountries?[countryId] {
+            peakCountryDropdown.text = countryName
+        }
+    }
+    
+    func dropdownTextFieldDidChangeText(_ dropdownTextField: DropdownTextField, text: String) {
+        
     }
 }

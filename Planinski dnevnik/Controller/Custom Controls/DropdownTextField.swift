@@ -5,10 +5,6 @@ protocol DropdownTextFieldDelegate: AnyObject {
     func dropdownTextFieldDidChangeText(_ dropdownTextField: DropdownTextField, text: String)
 }
 
-extension DropdownTextFieldDelegate {
-    func dropdownTextFieldDidChangeText(_ dropdownTextField: DropdownTextField, text: String) {}
-}
-
 @IBDesignable
 class DropdownTextField: UIView {
 

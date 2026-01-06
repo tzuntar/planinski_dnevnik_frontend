@@ -32,6 +32,7 @@ class JournalViewController : UIViewController {
             guard let postsRow = sender as? Int else { return }
             let vc = segue.destination as! HikeEntryController
             vc.existingHike = posts![postsRow]
+            vc.callbackDelegate = self
         }
     }
 
@@ -85,7 +86,7 @@ extension JournalViewController: UITableViewDataSource {
     }
 }
 
-// MAKR: - Posts Table View Delegate
+// MARK: - Posts Table View Delegate
 extension JournalViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
@@ -105,4 +106,13 @@ extension JournalViewController: UITableViewDelegate {
     /*func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }*/
+}
+
+// MARK: - Hike Entry Callback Delegate
+extension JournalViewController: HikeEntryCallbackDelegate {
+    func didSubmitEntry() {
+        DispatchQueue.global(qos: .background).async {
+            self.journalLogic!.retrievePosts()
+        }
+    }
 }

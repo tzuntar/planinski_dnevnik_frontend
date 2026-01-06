@@ -40,6 +40,9 @@ class ProfileViewController : UIViewController {
         if let photoUrl = currentUser?.photo_uri {
             let fullUrl = "\(APIURL)\(photoUrl)"
             self.profilePictureView.loadFrom(url: fullUrl)
+            self.profilePictureView.contentMode = .scaleAspectFill
+            self.profilePictureView.clipsToBounds = true
+            self.profilePictureView.layer.masksToBounds = true
             }
     
 
