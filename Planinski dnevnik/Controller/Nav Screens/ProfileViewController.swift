@@ -21,6 +21,9 @@ class ProfileViewController : UIViewController {
         super.viewDidLoad()
         self.currentUser = AuthManager.shared.session?.user
         
+        //skrije display name, ker ga nimava impl.
+        displayNameLabel.isHidden = true
+        
         bioTextBox.layer.cornerRadius = 10
         usernameLabel.text = currentUser?.name
         
@@ -52,6 +55,8 @@ class ProfileViewController : UIViewController {
         
         
         bioTextBox.delegate = self
+        
+        toolbar()
     
     }
     
@@ -129,7 +134,26 @@ class ProfileViewController : UIViewController {
         loginController.modalPresentationStyle = .fullScreen
         present(loginController, animated: true, completion: nil)
     }
+    
+    func toolbar() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let shraniButton = UIBarButtonItem(title: "Shrani", style: .done, target: self, action: #selector(dismissKeyboard))
+        
+        toolbar.setItems([flexSpace, shraniButton], animated: false)
+        
+        bioTextBox.inputAccessoryView = toolbar
+    }
+
+    @objc override func dismissKeyboard() {
+        //skrije tipkovnico in triggera editingDidEnd za bio
+        view.endEditing(true)
+    }
 }
+
 
 
 
