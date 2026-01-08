@@ -82,3 +82,87 @@ extension UIViewController {
         animator.startAnimation()
     }
 }
+
+class StampImageView: UIImageView {
+    private let maskLayer = CAShapeLayer()
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let path = stampPath(in: bounds)
+        maskLayer.frame = bounds
+        maskLayer.path = path.cgPath
+        layer.mask = maskLayer
+
+        let border = CAShapeLayer()
+        border.path = maskLayer.path
+        border.strokeColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        border.fillColor = UIColor.clear.cgColor
+        border.lineWidth = 1
+        layer.addSublayer(border)
+    }
+    
+    func stampPath(in rect: CGRect,
+                   perforationRadius: CGFloat = 6,
+                   perforationSpacing: CGFloat = 4) -> UIBezierPath {
+
+        let path = UIBezierPath()
+        let r = perforationRadius
+        let spacing = perforationSpacing
+
+        // zgornji rob
+        path.move(to: CGPoint(x: rect.minX + r, y: rect.minY))
+        var x = rect.minX + r
+        while x < rect.maxX - r {
+            path.addArc(
+                withCenter: CGPoint(x: x + r, y: rect.minY),
+                radius: r,
+                startAngle: .pi,
+                endAngle: 0,
+                clockwise: false
+            )
+            x += (2 * r + spacing)
+        }
+
+        // desni rob
+        var y = rect.minY + r
+        while y < rect.maxY - r {
+            path.addArc(
+                withCenter: CGPoint(x: rect.maxX, y: y + r),
+                radius: r,
+                startAngle: -.pi / 2,
+                endAngle: .pi / 2,
+                clockwise: false
+            )
+            y += (2 * r + spacing)
+        }
+
+        // spodnji rob
+        x = rect.maxX - r
+        while x > rect.minX + r {
+            path.addArc(
+                withCenter: CGPoint(x: x - r, y: rect.maxY),
+                radius: r,
+                startAngle: 0,
+                endAngle: .pi,
+                clockwise: false
+            )
+            x -= (2 * r + spacing)
+        }
+
+        // levi rob
+        y = rect.maxY - r
+        while y > rect.minY + r {
+            path.addArc(
+                withCenter: CGPoint(x: rect.minX, y: y - r),
+                radius: r,
+                startAngle: .pi / 2,
+                endAngle: -.pi / 2,
+                clockwise: false
+            )
+            y -= (2 * r + spacing)
+        }
+
+        path.close()
+        return path
+    }
+}

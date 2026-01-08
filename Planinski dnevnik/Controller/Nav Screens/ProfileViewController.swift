@@ -6,12 +6,11 @@ class ProfileViewController : UIViewController {
 
     @IBOutlet weak var profilePictureView: UIImageView!
     @IBOutlet weak var bioTextBox: UITextView!
-    @IBOutlet weak var displayNameLabel: UILabel!
     @IBOutlet weak var changePasswordButton: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var userEmailLabel: UILabel!
     
-    var imagePicker = UIImagePickerController()
-
+    private var imagePicker = UIImagePickerController()
     
     private lazy var userLogic = UserLogic(delegatingActionsTo: self)
     
@@ -20,39 +19,35 @@ class ProfileViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentUser = AuthManager.shared.session?.user
-        
+
         bioTextBox.layer.cornerRadius = 10
-        usernameLabel.text = currentUser?.name
-        
+
         profilePictureView.layer.cornerRadius = profilePictureView.frame.height / 2
-            profilePictureView.clipsToBounds = true
-        
+        profilePictureView.contentMode = .scaleAspectFill
+        profilePictureView.layer.masksToBounds = true
+        profilePictureView.clipsToBounds = true
         let tapPhotoMenu = UITapGestureRecognizer(target: self, action: #selector(profilePictureTapped))
-            profilePictureView.isUserInteractionEnabled = true
+        profilePictureView.isUserInteractionEnabled = true
         profilePictureView.addGestureRecognizer(tapPhotoMenu)
         
         imagePicker.delegate = self
-        
+        bioTextBox.delegate = self
+
+        usernameLabel.text = currentUser?.name
+        userEmailLabel.text = currentUser?.email
+
         let currentBio = currentUser?.bio
         bioTextBox.text = currentBio
         originalBio = currentBio ?? ""
-        
+    
         if let photoUrl = currentUser?.photo_uri {
             let fullUrl = "\(APIURL)\(photoUrl)"
             self.profilePictureView.loadFrom(url: fullUrl)
-            self.profilePictureView.contentMode = .scaleAspectFill
-            self.profilePictureView.clipsToBounds = true
-            self.profilePictureView.layer.masksToBounds = true
-            }
-    
+        }
 
         if let userId = currentUser?.id {
-                userLogic.retrieveData(for: userId)
-            }
-        
-        
-        bioTextBox.delegate = self
-    
+            userLogic.retrieveData(for: userId)
+        }
     }
     
     @objc func profilePictureTapped() {
@@ -144,9 +139,7 @@ extension ProfileViewController: UserProfileDelegate, UITextViewDelegate {
         }
     }
     
-    func didChangePasswordSuccessfully(){
-        return
-    }
+    func didChangePasswordSuccessfully() { }
     
     func didLoadUserData(_ user: User) {
         self.currentUser = user
@@ -158,47 +151,25 @@ extension ProfileViewController: UserProfileDelegate, UITextViewDelegate {
         print(newUrl)
     }
     
-    func didUpdateUserData() {
-        let alert = UIAlertController(
-            title: "Profil posodobljen",
-            message: "Nastavitve vašega profila so bile posodobljene.",
-            preferredStyle: .alert
-        )
-        
-        alert.addAction(UIAlertAction(title:"OK", style: .default, handler:nil))
-        
-        self.present(alert,animated:true,completion: nil)
-        
-    }
+    func didUpdateUserData() { }
     
     func didLoadingFailWithError(_ error: any Error) {
         var message = error.localizedDescription;
         if let error = error as? UserProfileError {
             message = error.description
         }
-        let alert = UIAlertController(
-            title: "Napaka",
-            message: message,
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
+        print("Could not update bio: ", message)
     }
 }
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-    
+    func imagePickerController(_ picker: UIImagePickerController,
+   didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.editedImage] as? UIImage {
-            
             self.profilePictureView.image = image
-            
-           
             userLogic.uploadAvatar(image: image)
         }
-        
         picker.dismiss(animated: true, completion: nil)
     }
     

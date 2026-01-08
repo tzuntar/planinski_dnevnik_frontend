@@ -21,7 +21,10 @@ class UserProfileController: UIViewController {
         self.userLogic = UserLogic(delegatingActionsTo: self)
         self.userLogic!.retrieveData(for: userId!)
         
-        
+        userProfilePhoto.layer.cornerRadius = userProfilePhoto.frame.height / 2
+        userProfilePhoto.contentMode = .scaleAspectFill
+        userProfilePhoto.layer.masksToBounds = true
+        userProfilePhoto.clipsToBounds = true
     }
     
     @IBAction func backButtonPressed() {
@@ -37,9 +40,11 @@ extension UserProfileController: UserProfileDelegate {
         }
         userNameLabel.text = user.name
         userBioLabel.text = user.bio
-        userNoPostsLabel.isHidden = user.posts?.count ?? 0 > 0
         userPosts = user.posts
         userPostsTable.reloadData()
+        if user.posts?.count ?? 0 > 0 {
+            userNoPostsLabel.text = "\(user.posts!.count) javnih objav"
+        }
     }
     
     func didUpdateUserData() {

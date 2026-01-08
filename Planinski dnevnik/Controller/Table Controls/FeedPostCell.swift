@@ -24,7 +24,8 @@ class FeedPostCell : UITableViewCell {
         postTitleLabel.text = post.name
         postDescriptionLabel.text = post.description
         if let peak = post.peak {
-            postPeakLabel.text = "\(peak.name), \(peak.altitude) m.n.v."
+            let dateStr = ISO8601DateFormatter().date(from: post.created_at)?.formatted() ?? ""
+            postPeakLabel.text = "\(peak.name), \(peak.altitude) m.n.v. \(dateStr)"
         }
         postImageView.loadFrom(URLAddress: "\(APIURL)/\(post.photo_path)")
         postUserButton.setTitle(post.user?.name, for: .normal)

@@ -32,6 +32,7 @@ class Post: Codable {
     let user: User?
     let peak: Peak?
     let is_public: Int?
+    let created_at: String
 }
 
 struct Peak: Codable {
