@@ -122,16 +122,6 @@ extension JournalViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return !tableView.isEditing
     }
-    
-    /*func tableView(_ tableView: UITableView,
-                   commit editingStyle: UITableViewCell.EditingStyle,
-                   forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            guard let postId = posts?[indexPath.row].id else { return }
-            journalLogic?.deletePost(withId: postId)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
-    }*/
 }
 
 // MARK: - Hike Entry Callback Delegate
