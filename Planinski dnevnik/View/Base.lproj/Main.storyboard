@@ -248,20 +248,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v9M-RC-JQ8">
-                                <rect key="frame" x="20" y="118" width="363" height="45"/>
+                                <rect key="frame" x="20" y="118" width="363" height="38"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moji vzponi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgv-bv-BZn">
-                                        <rect key="frame" x="0.0" y="0.0" width="277" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="38"/>
                                         <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="24"/>
                                         <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button hidden="YES" toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ph1-hh-I6f">
-                                        <rect key="frame" x="287" y="0.0" width="76" height="45"/>
+                                    <button toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ph1-hh-I6f">
+                                        <rect key="frame" x="315" y="0.0" width="48" height="38"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="Navigate Right to Feed"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Select Button"/>
                                         <connections>
-                                            <action selector="navToFeedPressed" destination="SgC-O6-mdC" eventType="touchUpInside" id="RdP-IT-Iem"/>
+                                            <action selector="editPressed:" destination="SgC-O6-mdC" eventType="touchUpInside" id="Lmi-b7-0Tz"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -275,8 +275,8 @@
                                     <constraint firstItem="Ph1-hh-I6f" firstAttribute="leading" secondItem="Pgv-bv-BZn" secondAttribute="trailing" constant="10" id="zyb-Bv-V6Z"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IF2-B8-2Qz">
-                                <rect key="frame" x="20" y="163" width="353" height="621"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IF2-B8-2Qz">
+                                <rect key="frame" x="20" y="166" width="353" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button toolTip="Dodaj vnos" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKQ-aF-8br">
@@ -292,7 +292,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opravili niste še nobenega vzpona." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hx-hg-bL8">
-                                <rect key="frame" x="20" y="173" width="353" height="21.666666666666657"/>
+                                <rect key="frame" x="20" y="166" width="353" height="21.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -307,7 +307,7 @@
                             <constraint firstItem="Qb0-kP-hFm" firstAttribute="trailing" secondItem="AKQ-aF-8br" secondAttribute="trailing" constant="20" id="EZt-WJ-eox"/>
                             <constraint firstItem="6hx-hg-bL8" firstAttribute="leading" secondItem="Qb0-kP-hFm" secondAttribute="leading" constant="20" id="ExW-jQ-cfm"/>
                             <constraint firstItem="6hx-hg-bL8" firstAttribute="top" secondItem="v9M-RC-JQ8" secondAttribute="bottom" constant="10" id="He7-9Z-fEO"/>
-                            <constraint firstItem="IF2-B8-2Qz" firstAttribute="top" secondItem="v9M-RC-JQ8" secondAttribute="bottom" id="I7c-lm-xHg"/>
+                            <constraint firstItem="IF2-B8-2Qz" firstAttribute="top" secondItem="v9M-RC-JQ8" secondAttribute="bottom" constant="10" id="I7c-lm-xHg"/>
                             <constraint firstItem="Qb0-kP-hFm" firstAttribute="trailing" secondItem="6hx-hg-bL8" secondAttribute="trailing" constant="20" id="bb1-Nf-Wjg"/>
                             <constraint firstItem="IF2-B8-2Qz" firstAttribute="trailing" secondItem="Qb0-kP-hFm" secondAttribute="trailing" constant="-20" id="ebt-ok-GdN"/>
                             <constraint firstItem="IF2-B8-2Qz" firstAttribute="bottom" secondItem="4CH-Oz-iWs" secondAttribute="bottomMargin" id="kCD-pE-o07"/>
@@ -800,8 +800,8 @@
         <image name="Log Navigate Left" width="52" height="31"/>
         <image name="Log Out Icon" width="37" height="36"/>
         <image name="Navigate Left to Feed" width="52" height="31"/>
-        <image name="Navigate Right to Feed" width="52" height="31"/>
         <image name="Profile Navigate Right" width="52" height="31"/>
+        <image name="Select Button" width="24" height="24"/>
         <image name="Select Photo" width="233" height="131"/>
         <image name="User" width="37" height="36"/>
         <namedColor name="AccentColor">

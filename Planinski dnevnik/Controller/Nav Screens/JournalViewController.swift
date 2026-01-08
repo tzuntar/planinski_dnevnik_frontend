@@ -44,6 +44,15 @@ class JournalViewController : UIViewController {
             }
         }
     }
+
+    @IBAction func editPressed(_ sender: UIButton) {
+        postsTable.setEditing(!postsTable.isEditing, animated: true)
+        if postsTable.isEditing {
+            sender.setImage(UIImage(named: "Selected Button"), for: .normal)
+        } else {
+            sender.setImage(UIImage(named: "Select Button"), for: .normal)
+        }
+    }
     
     @IBAction func navToFeedPressed() {
         // yes, it's technically its parent. yes, it's two levels higher in the hierarchy.
@@ -90,7 +99,10 @@ extension JournalViewController: UITableViewDataSource {
 extension JournalViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
-            // delete item
+            guard let postId = self.posts?[indexPath.row].id else { return }
+            self.journalLogic?.deletePost(withId: postId)
+            self.posts?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
             completionHandler(true)
         }
         deleteAction.image = UIImage(systemName: "trash")
@@ -103,8 +115,22 @@ extension JournalViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
-    /*func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return !tableView.isEditing
+    }
+    
+    /*func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let postId = posts?[indexPath.row].id else { return }
+            journalLogic?.deletePost(withId: postId)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }*/
 }
 
