@@ -542,7 +542,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1J9-Pl-1tm">
                                 <rect key="frame" x="10" y="89" width="413" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vrh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWb-ot-2O5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nalaganje..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWb-ot-2O5">
                                         <rect key="frame" x="48" y="0.0" width="365" height="40"/>
                                         <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="24"/>
                                         <color key="textColor" name="Text Color"/>
@@ -630,7 +630,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xE8-op-Mnh">
                                 <rect key="frame" x="10" y="89" width="353" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uporabnik" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4y-gP-tGs">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nalaganje..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4y-gP-tGs">
                                         <rect key="frame" x="48" y="0.0" width="305" height="40"/>
                                         <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="24"/>
                                         <color key="textColor" name="Text Color"/>

@@ -9,6 +9,7 @@ class FeedPostCell : UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var postTitleLabel: UILabel!
     @IBOutlet weak var postDescriptionLabel: UILabel!
+    @IBOutlet weak var postDateLabel: UILabel!
     @IBOutlet weak var postUserAvatar: UIImageView!
     @IBOutlet weak var postUserButton: UIButton!
     @IBOutlet weak var postPeakButton: UIButton!
@@ -29,10 +30,10 @@ class FeedPostCell : UITableViewCell {
         postTitleLabel.text = post.name
         postDescriptionLabel.text = post.description
         if let peak = post.peak {
-            let dateStr = ISO8601DateFormatter().date(from: post.created_at)?.formatted() ?? ""
-            let peakName = "\(peak.name), \(peak.altitude) m.n.v. \(dateStr)"
+            let peakName = "  \(peak.name), \(peak.altitude) m"
             postPeakButton.setTitle(peakName, for: .normal)
         }
+        postDateLabel.text = Utilities.backendDateToEuropeanString(post.created_at) ?? ""
         postImageView.loadFrom(URLAddress: "\(APIURL)/\(post.photo_path)")
         postUserButton.setTitle(post.user?.name, for: .normal)
         if let posterPfpUri = post.user?.photo_uri {

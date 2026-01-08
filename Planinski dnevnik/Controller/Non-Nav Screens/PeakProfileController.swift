@@ -20,6 +20,7 @@ class PeakProfileController: UIViewController {
 
         peakPostsLogic = PeakPostsLogic(delegatingActionsTo: self)
     
+        peakNameLabel.text = peak!.name
         peakDescriptionLabel.text = "\(peak!.altitude) m.n.v."
         peakPostsLogic!.retrievePeakPosts(forPeakWithId: peak!.id)
     }

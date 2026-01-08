@@ -16,8 +16,8 @@ class JournalPostCell : UITableViewCell {
         postDescriptionLabel.text = post.description
         postImageView.loadFrom(URLAddress: "\(APIURL)/\(post.photo_path)")
         if let peak = post.peak {
-            let dateStr = ISO8601DateFormatter().date(from: post.created_at)?.formatted() ?? ""
-            peakField.text = "\(peak.name), \(peak.altitude) m.n.v. \(dateStr)"
+            let dateStr = Utilities.backendDateToEuropeanString(post.created_at) ?? ""
+            peakField.text = "\(peak.name), \(peak.altitude) m, \(dateStr)"
         }
     }
 }

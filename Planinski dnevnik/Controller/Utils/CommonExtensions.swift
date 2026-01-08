@@ -2,6 +2,20 @@
 
 import UIKit
 
+class Utilities {
+    static func backendDateToEuropeanString(_ input: String) -> String? {
+        let isoFormatter = ISO8601DateFormatter()
+        isoFormatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        guard let date = isoFormatter.date(from: input) else { return nil }
+
+        let outputFormatter = DateFormatter()
+        outputFormatter.locale = Locale(identifier: "en_GB")
+        outputFormatter.timeZone = TimeZone.current
+        outputFormatter.dateFormat = "d. M. yyyy HH:mm"
+        return outputFormatter.string(from: date)
+    }
+}
+
 extension UIImageView {
     func loadFrom(URLAddress address: String) {
         guard let url = URL(string: address) else { return }
