@@ -28,11 +28,17 @@ class FeedViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "ShowUserProfile",
-              let userId = sender as? Int,
-              let destination = segue.destination as? UserProfileController
-        else { return }
-        destination.userId = userId
+        if segue.identifier == "ShowUserProfile" {
+            guard let userId = sender as? Int,
+                  let destination = segue.destination as? UserProfileController
+            else { return }
+            destination.userId = userId
+        } else if segue.identifier == "ShowPeakProfile" {
+            guard let peak = sender as? Peak,
+                  let destination = segue.destination as? PeakProfileController
+            else { return }
+            destination.peak = peak
+        }
     }
     
     @objc func refreshFeed() {
@@ -96,5 +102,9 @@ extension FeedViewController: FeedPostCellDelegate {
     func feedPostCell(_ cell: FeedPostCell, didTapUserWithId id: Int) {
         self.performSegue(withIdentifier: "ShowUserProfile", sender: id)
         // invokes the prepare(for: segue...) method above
+    }
+
+    func feedPostCell(_ cell: FeedPostCell, didTapPeak peak: Peak) {
+        self.performSegue(withIdentifier: "ShowPeakProfile", sender: peak)
     }
 }

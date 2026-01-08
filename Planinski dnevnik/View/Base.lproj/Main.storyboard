@@ -380,6 +380,7 @@
                     <connections>
                         <outlet property="postsTable" destination="tMU-Sm-ApS" id="Jac-ZL-szt"/>
                         <segue destination="I2K-3Q-lZA" kind="showDetail" identifier="ShowUserProfile" id="puO-Tx-cEa"/>
+                        <segue destination="EQH-Ws-fUM" kind="showDetail" identifier="ShowPeakProfile" id="ZpL-hX-DLx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mib-HS-DRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -530,6 +531,94 @@
             </objects>
             <point key="canvasLocation" x="803.81679389312978" y="81.690140845070431"/>
         </scene>
+        <!--Peak Profile Controller-->
+        <scene sceneID="zRK-Ko-PC3">
+            <objects>
+                <viewController id="EQH-Ws-fUM" customClass="PeakProfileController" customModule="Planinski_dnevnik" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g2w-Qi-QeS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1J9-Pl-1tm">
+                                <rect key="frame" x="10" y="89" width="413" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vrh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWb-ot-2O5">
+                                        <rect key="frame" x="48" y="0.0" width="365" height="40"/>
+                                        <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="24"/>
+                                        <color key="textColor" name="Text Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vj3-0V-V1g">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="0Rs-gS-vOP"/>
+                                            <constraint firstAttribute="width" constant="42" id="sDC-gi-QSm"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Back Icon"/>
+                                        <connections>
+                                            <action selector="backButtonPressed" destination="EQH-Ws-fUM" eventType="touchUpInside" id="DHf-I0-mD3"/>
+                                            <action selector="backButtonPressed" destination="I2K-3Q-lZA" eventType="touchUpInside" id="Obw-8g-fnz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cWb-ot-2O5" secondAttribute="trailing" id="1br-Kc-eMb"/>
+                                    <constraint firstAttribute="bottom" secondItem="cWb-ot-2O5" secondAttribute="bottom" id="GQO-Ab-i98"/>
+                                    <constraint firstItem="vj3-0V-V1g" firstAttribute="top" secondItem="1J9-Pl-1tm" secondAttribute="top" id="Lpd-RK-BgK"/>
+                                    <constraint firstItem="vj3-0V-V1g" firstAttribute="leading" secondItem="1J9-Pl-1tm" secondAttribute="leading" id="Qp5-cz-7XE"/>
+                                    <constraint firstItem="cWb-ot-2O5" firstAttribute="leading" secondItem="vj3-0V-V1g" secondAttribute="trailing" constant="6" id="Tkp-NE-ziv"/>
+                                    <constraint firstAttribute="bottom" secondItem="vj3-0V-V1g" secondAttribute="bottom" id="UKu-qJ-gAf"/>
+                                    <constraint firstItem="cWb-ot-2O5" firstAttribute="top" secondItem="1J9-Pl-1tm" secondAttribute="top" id="UyJ-zn-UOx"/>
+                                    <constraint firstItem="cWb-ot-2O5" firstAttribute="top" secondItem="1J9-Pl-1tm" secondAttribute="top" id="bl3-3Z-udX"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nbX-b8-SU5">
+                                <rect key="frame" x="30" y="202.66666666666669" width="333" height="580.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 m.n.v., Slovenija" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1P-lV-5eq">
+                                <rect key="frame" x="30" y="139" width="333" height="21.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
+                                <color key="textColor" name="Text Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ni javnih objav s tega vrha." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dC-48-0Fe">
+                                <rect key="frame" x="30" y="170.66666666666666" width="333" height="22"/>
+                                <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
+                                <color key="textColor" name="Text Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vIO-OH-1hB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6dC-48-0Fe" firstAttribute="leading" secondItem="vIO-OH-1hB" secondAttribute="leading" constant="30" id="1fA-24-SyN"/>
+                            <constraint firstItem="1J9-Pl-1tm" firstAttribute="top" secondItem="vIO-OH-1hB" secondAttribute="top" constant="30" id="9Nt-gT-7s8"/>
+                            <constraint firstItem="vIO-OH-1hB" firstAttribute="trailing" secondItem="6dC-48-0Fe" secondAttribute="trailing" constant="30" id="9Ra-2j-rwV"/>
+                            <constraint firstItem="vIO-OH-1hB" firstAttribute="bottom" secondItem="nbX-b8-SU5" secondAttribute="bottom" id="E7u-YQ-1SF"/>
+                            <constraint firstItem="1J9-Pl-1tm" firstAttribute="leading" secondItem="vIO-OH-1hB" secondAttribute="leading" constant="10" id="JAQ-fV-ss5"/>
+                            <constraint firstItem="E1P-lV-5eq" firstAttribute="top" secondItem="1J9-Pl-1tm" secondAttribute="bottom" constant="10" id="LMb-yh-AAN"/>
+                            <constraint firstItem="nbX-b8-SU5" firstAttribute="leading" secondItem="vIO-OH-1hB" secondAttribute="leading" constant="30" id="ONx-IE-Hmh"/>
+                            <constraint firstItem="vIO-OH-1hB" firstAttribute="trailing" secondItem="nbX-b8-SU5" secondAttribute="trailing" constant="30" id="SiX-Lg-1ML"/>
+                            <constraint firstItem="E1P-lV-5eq" firstAttribute="leading" secondItem="vIO-OH-1hB" secondAttribute="leading" constant="30" id="VGz-gt-riM"/>
+                            <constraint firstItem="6dC-48-0Fe" firstAttribute="top" secondItem="E1P-lV-5eq" secondAttribute="bottom" constant="10" id="bDa-Ea-bCv"/>
+                            <constraint firstItem="nbX-b8-SU5" firstAttribute="top" secondItem="6dC-48-0Fe" secondAttribute="bottom" constant="10" id="cnS-IT-sCj"/>
+                            <constraint firstItem="vIO-OH-1hB" firstAttribute="trailing" secondItem="E1P-lV-5eq" secondAttribute="trailing" constant="30" id="doj-BQ-SuH"/>
+                            <constraint firstItem="1J9-Pl-1tm" firstAttribute="trailing" secondItem="vIO-OH-1hB" secondAttribute="trailing" constant="30" id="nqi-43-t3n"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="peakDescriptionLabel" destination="E1P-lV-5eq" id="F2I-2D-QtX"/>
+                        <outlet property="peakNameLabel" destination="cWb-ot-2O5" id="4Qq-UW-X8q"/>
+                        <outlet property="peakNoPostsLabel" destination="6dC-48-0Fe" id="jMo-aV-byh"/>
+                        <outlet property="peakPostsTable" destination="nbX-b8-SU5" id="qKq-vM-YRc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6iV-68-aQI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-312.21374045801525" y="930.98591549295782"/>
+        </scene>
         <!--User Profile Controller-->
         <scene sceneID="GrG-Tq-Xul">
             <objects>
@@ -600,7 +689,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ta uporabnik nima zabeležene aktivnosti." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSg-iY-4zF">
                                         <rect key="frame" x="0.0" y="86" width="333" height="21.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Outfit-Thin_Regular" family="Outfit" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="Text Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="unE-ey-ptR">
@@ -632,7 +721,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uk3-Dx-fbq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59" y="760"/>
+            <point key="canvasLocation" x="415" y="931"/>
         </scene>
         <!--Hike Peak Entry Controller-->
         <scene sceneID="FXe-Em-66y">
