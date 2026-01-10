@@ -43,7 +43,7 @@ public class EZSwipeTabBar: UIView {
     var onTabSelected: ((Int) -> Void)?
 
     // Customization properties
-    public var barBackgroundColor: UIColor = UIColor(named: "Page Background")! {
+    public var barBackgroundColor: UIColor = .systemBackground {
         didSet { backgroundColor = barBackgroundColor }
     }
     public var selectedTintColor: UIColor = UIColor(named: "AccentColor")!

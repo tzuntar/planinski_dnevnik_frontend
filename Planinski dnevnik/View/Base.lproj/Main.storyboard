@@ -477,10 +477,18 @@
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WgG-LO-ZVQ">
                                                 <rect key="frame" x="0.0" y="40.333333333333314" width="353" height="128"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="Page Background"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                        <color key="value" name="Input Field Placeholder"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textView>
                                         </subviews>
                                     </stackView>
@@ -508,7 +516,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ESY-fY-WA1"/>
-                        <color key="backgroundColor" name="Page Background"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5OP-N2-y4B" firstAttribute="top" secondItem="nBz-MF-8Py" secondAttribute="bottom" constant="20" id="6fk-DF-H6T"/>
                             <constraint firstItem="ESY-fY-WA1" firstAttribute="trailing" secondItem="nBz-MF-8Py" secondAttribute="trailing" constant="20" id="PvX-si-Uvc"/>
@@ -895,6 +903,9 @@
         <image name="User" width="37" height="36"/>
         <namedColor name="AccentColor">
             <color red="0.075999997556209564" green="0.16899999976158142" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Input Field Placeholder">
+            <color red="0.12099999934434891" green="0.16899999976158142" blue="0.082000002264976501" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Page Background">
             <color red="0.96799999475479126" green="0.99000000953674316" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
