@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -26,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6Y7-AA-Ohp">
-                                <rect key="frame" x="40" y="59" width="313" height="724"/>
+                                <rect key="frame" x="40" y="118" width="313" height="631"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planinski dnevnik" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsA-xv-BFh">
                                         <rect key="frame" x="0.0" y="0.0" width="313" height="45.333333333333336"/>
@@ -35,7 +35,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AV9-73-K6z">
-                                        <rect key="frame" x="0.0" y="172" width="313" height="43"/>
+                                        <rect key="frame" x="0.0" y="148.66666666666669" width="313" height="43"/>
                                         <string key="text">Prijavi se v svoj račun in deli svoje
 planinarske podvige</string>
                                         <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="17"/>
@@ -43,7 +43,7 @@ planinarske podvige</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="LNA-De-sXx">
-                                        <rect key="frame" x="0.0" y="310.33333333333331" width="313" height="108"/>
+                                        <rect key="frame" x="0.0" y="264" width="313" height="108"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-pošta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v2d-HG-t9g">
                                                 <rect key="frame" x="0.0" y="0.0" width="313" height="40"/>
@@ -87,20 +87,20 @@ planinarske podvige</string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="3Gy-y8-Nlx">
-                                        <rect key="frame" x="0.0" y="517.33333333333337" width="313" height="35.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="447.66666666666663" width="313" height="35.666666666666686"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Še nimaš računa?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7a-n7-L81">
-                                                <rect key="frame" x="0.0" y="0.0" width="132" height="35.666666666666664"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Še nimate računa?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7a-n7-L81">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="35.666666666666664"/>
                                                 <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="17"/>
                                                 <color key="textColor" name="Text Color"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVE-kf-NrQ">
-                                                <rect key="frame" x="168" y="0.0" width="145" height="35.666666666666664"/>
+                                                <rect key="frame" x="152.33333333333337" y="0.0" width="160.66666666666663" height="35.666666666666664"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain">
                                                     <attributedString key="attributedTitle">
-                                                        <fragment content="Ustvari ga tukaj">
+                                                        <fragment content="Ustvarite ga tukaj">
                                                             <attributes>
                                                                 <font key="NSFont" size="17" name="Outfit-Thin_SemiBold"/>
                                                                 <integer key="NSUnderline" value="1"/>
@@ -116,7 +116,7 @@ planinarske podvige</string>
                                         <color key="tintColor" name="Text Color"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNL-cO-9Tr">
-                                        <rect key="frame" x="0.0" y="688.33333333333337" width="313" height="35.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="595.33333333333337" width="313" height="35.666666666666629"/>
                                         <color key="tintColor" name="Text Color"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Naprej">
@@ -154,148 +154,178 @@ planinarske podvige</string>
             <objects>
                 <viewController id="Fu8-d1-8JS" customClass="RegisterController" customModule="Planinski_dnevnik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hrh-BX-fgh">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="RQh-Jd-eBy">
-                                <rect key="frame" x="40" y="50" width="313" height="663"/>
+                                <rect key="frame" x="35" y="149.00000000000003" width="323" height="415.66666666666674"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registracija" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2a-NT-pka">
-                                        <rect key="frame" x="0.0" y="0.0" width="313" height="21.666666666666668"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21.666666666666657" id="zb4-sf-3vt"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="17"/>
-                                        <color key="textColor" name="Text Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9w-c3-hlP">
-                                        <rect key="frame" x="0.0" y="51.666666666666671" width="313" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="2lS-yh-j5b"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" systemColor="systemPinkColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9X9-mW-Q0b">
-                                        <rect key="frame" x="0.0" y="111.66666666666666" width="313" height="239.99999999999997"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9X9-mW-Q0b">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="350"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-pošta:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZg-VC-ao9">
-                                                <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9mr-fn-Ri4">
+                                                <rect key="frame" x="0.0" y="0.0" width="323" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naX-bJ-SbL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="ceK-ju-BPI"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="14"/>
+                                                        <color key="textColor" name="Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ime" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CKS-4p-4Zz">
+                                                        <rect key="frame" x="0.0" y="30" width="323" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="qbo-So-aKe"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WTl-rQ-FU6">
+                                                <rect key="frame" x="0.0" y="80" width="323" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-pošta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZg-VC-ao9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="ZJh-dM-fdF"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="14"/>
+                                                        <color key="textColor" name="Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-pošta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMe-Lx-mn8">
+                                                        <rect key="frame" x="0.0" y="30" width="323" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="SYT-wI-mby"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="username"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kMd-1D-NJN">
+                                                <rect key="frame" x="0.0" y="160" width="323" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geslo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDr-qZ-MTb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="fpA-3V-i7Y"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="14"/>
+                                                        <color key="textColor" name="Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Geslo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GWP-Se-cpM">
+                                                        <rect key="frame" x="0.0" y="30" width="323" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="jhT-Mf-0S5"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HHr-dU-8Jq">
+                                                <rect key="frame" x="0.0" y="240" width="323" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ponovno vnesite geslo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeU-uf-h59">
+                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="WKE-HD-qk1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="14"/>
+                                                        <color key="textColor" name="Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Geslo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glA-wl-V4H">
+                                                        <rect key="frame" x="0.0" y="30" width="323" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="9ug-ZB-tU7"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9w-c3-hlP">
+                                                <rect key="frame" x="0.0" y="320" width="323" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="ZJh-dM-fdF"/>
+                                                    <constraint firstAttribute="height" constant="30" id="2lS-yh-j5b"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Outfit-Thin_Medium" family="Outfit" pointSize="14"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-pošta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMe-Lx-mn8">
-                                                <rect key="frame" x="0.0" y="30" width="313" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="SYT-wI-mby"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="username"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uporabniško ime:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naX-bJ-SbL">
-                                                <rect key="frame" x="0.0" y="60" width="313" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="ceK-ju-BPI"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Uporabniško ime" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CKS-4p-4Zz">
-                                                <rect key="frame" x="0.0" y="90" width="313" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="qbo-So-aKe"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="name"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geslo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDr-qZ-MTb">
-                                                <rect key="frame" x="0.0" y="120.00000000000003" width="313" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="fpA-3V-i7Y"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Geslo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GWP-Se-cpM">
-                                                <rect key="frame" x="0.0" y="150.00000000000003" width="313" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="jhT-Mf-0S5"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
-                                            </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ponovi geslo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeU-uf-h59">
-                                                <rect key="frame" x="0.0" y="180.00000000000003" width="313" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="WKE-HD-qk1"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ponovi geslo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glA-wl-V4H">
-                                                <rect key="frame" x="0.0" y="210.00000000000003" width="313" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="9ug-ZB-tU7"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
-                                            </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="eTI-oP-Fmo">
-                                        <rect key="frame" x="0.0" y="381.66666666666669" width="313" height="150.00000000000006"/>
-                                        <color key="tintColor" name="Text Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="6fS-FU-9YZ"/>
-                                        </constraints>
-                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRF-AA-zA1">
-                                        <rect key="frame" x="0.0" y="561.66666666666663" width="313" height="35.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="380" width="323" height="35.666666666666686"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35.670000000000002" id="Bwx-9a-Z9N"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Registriraj se">
+                                        <buttonConfiguration key="configuration" style="filled" title="Ustvari račun">
+                                            <fontDescription key="titleFontDescription" name="Outfit-Thin_SemiBold" family="Outfit" pointSize="17"/>
                                             <color key="baseBackgroundColor" name="Text Color"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="registerButtonPressed:" destination="Fu8-d1-8JS" eventType="touchUpInside" id="4hJ-dN-ZpK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGT-AC-RKD">
-                                        <rect key="frame" x="0.0" y="627.33333333333337" width="313" height="35.666666666666629"/>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgg-Xh-cOm">
+                                <rect key="frame" x="10" y="89" width="383" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ustvari račun" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WpO-cx-QaY">
+                                        <rect key="frame" x="48" y="0.0" width="335" height="40"/>
+                                        <fontDescription key="fontDescription" name="Shrikhand-Regular" family="Shrikhand" pointSize="24"/>
+                                        <color key="textColor" name="Text Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button toolTip="Nazaj" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCB-Qw-gIj">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35.670000000000002" id="88e-pC-S0S"/>
+                                            <constraint firstAttribute="width" constant="42" id="8ub-k6-TA1"/>
+                                            <constraint firstAttribute="height" constant="40" id="MYi-L5-zXw"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Nazaj na prijavo"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Back Icon"/>
                                         <connections>
-                                            <action selector="backButtonPressed:" destination="Fu8-d1-8JS" eventType="touchDown" id="aDy-Zh-Jjf"/>
+                                            <action selector="backButtonPressed:" destination="Fu8-d1-8JS" eventType="touchUpInside" id="UwU-VE-kPY"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WpO-cx-QaY" secondAttribute="trailing" id="3wZ-Fe-Cdc"/>
+                                    <constraint firstItem="WpO-cx-QaY" firstAttribute="top" secondItem="mgg-Xh-cOm" secondAttribute="top" id="6kJ-gF-XLs"/>
+                                    <constraint firstItem="WpO-cx-QaY" firstAttribute="leading" secondItem="RCB-Qw-gIj" secondAttribute="trailing" constant="6" id="Ec4-sE-sF6"/>
+                                    <constraint firstAttribute="bottom" secondItem="RCB-Qw-gIj" secondAttribute="bottom" id="QMy-rI-30g"/>
+                                    <constraint firstItem="RCB-Qw-gIj" firstAttribute="leading" secondItem="mgg-Xh-cOm" secondAttribute="leading" id="QWA-iA-GiC"/>
+                                    <constraint firstItem="WpO-cx-QaY" firstAttribute="top" secondItem="mgg-Xh-cOm" secondAttribute="top" id="XCm-Ec-27K"/>
+                                    <constraint firstItem="RCB-Qw-gIj" firstAttribute="top" secondItem="mgg-Xh-cOm" secondAttribute="top" id="iGX-Z8-mOT"/>
+                                    <constraint firstAttribute="bottom" secondItem="WpO-cx-QaY" secondAttribute="bottom" id="yLb-bD-tq6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ewi-fl-TKJ"/>
                         <color key="backgroundColor" name="Page Background"/>
                         <constraints>
-                            <constraint firstItem="RQh-Jd-eBy" firstAttribute="leading" secondItem="Ewi-fl-TKJ" secondAttribute="leading" constant="40" id="8j5-12-k7r"/>
+                            <constraint firstItem="RQh-Jd-eBy" firstAttribute="leading" secondItem="Ewi-fl-TKJ" secondAttribute="leading" constant="35" id="8j5-12-k7r"/>
                             <constraint firstItem="RQh-Jd-eBy" firstAttribute="centerX" secondItem="hrh-BX-fgh" secondAttribute="centerX" id="9dY-CC-6Wl"/>
-                            <constraint firstItem="RQh-Jd-eBy" firstAttribute="top" secondItem="Ewi-fl-TKJ" secondAttribute="top" constant="50" id="PJO-9V-M1A"/>
+                            <constraint firstItem="RQh-Jd-eBy" firstAttribute="top" secondItem="mgg-Xh-cOm" secondAttribute="bottom" constant="20" id="PJO-9V-M1A"/>
+                            <constraint firstItem="mgg-Xh-cOm" firstAttribute="leading" secondItem="Ewi-fl-TKJ" secondAttribute="leading" constant="10" id="WFh-uh-sao"/>
+                            <constraint firstAttribute="trailing" secondItem="mgg-Xh-cOm" secondAttribute="trailing" id="X3d-N0-bnW"/>
+                            <constraint firstItem="mgg-Xh-cOm" firstAttribute="top" secondItem="Ewi-fl-TKJ" secondAttribute="top" constant="30" id="zcF-GM-OrA"/>
+                            <constraint firstItem="Ewi-fl-TKJ" firstAttribute="trailing" secondItem="RQh-Jd-eBy" secondAttribute="trailing" constant="35" id="zkv-v4-XWw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HsY-Dl-iAZ"/>
                     <connections>
-                        <outlet property="backButton" destination="ZGT-AC-RKD" id="lgG-3f-EBZ"/>
                         <outlet property="confirmPasswordField" destination="glA-wl-V4H" id="HAF-O9-8lX"/>
                         <outlet property="emailErrorLabel" destination="n9w-c3-hlP" id="PKN-ba-LJD"/>
                         <outlet property="emailField" destination="qMe-Lx-mn8" id="mcm-iw-15F"/>
@@ -310,14 +340,15 @@ planinarske podvige</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Back Icon" width="34" height="34"/>
         <namedColor name="Page Background">
             <color red="0.96799999475479126" green="0.99000000953674316" blue="0.94999998807907104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Text Color">
             <color red="0.075999997556209564" green="0.16899999976158142" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

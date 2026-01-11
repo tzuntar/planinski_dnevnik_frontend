@@ -11,7 +11,6 @@ class RegisterController: UIViewController{
     @IBOutlet weak var confirmPasswordField: UITextField!
     
     //Buttons
-    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     
     //Error labels
