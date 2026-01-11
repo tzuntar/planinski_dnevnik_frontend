@@ -16,15 +16,9 @@ class RegisterController: UIViewController{
     
     //Error labels
     @IBOutlet weak var emailErrorLabel: UILabel!
-    @IBOutlet weak var confirmPasswordErrorLabel: UILabel!
-    @IBOutlet weak var usernameErrorLabel: UILabel!
-    @IBOutlet weak var passwordErrorLabel: UILabel!
     
     lazy var errorLabels: [UILabel] = [
         emailErrorLabel,
-        usernameErrorLabel,
-        confirmPasswordErrorLabel,
-        passwordErrorLabel
     ]
     
     //Error Messages
@@ -65,18 +59,18 @@ class RegisterController: UIViewController{
             emailErrorLabel.text = emptyErrorMessage
             hasError = true
         } else if !email.contains("@") || !email.contains(".") { // čist basic email validacija
-            emailErrorLabel.text = "E-poštni naslov ni veljaven."
+            emailErrorLabel.text = "Prosimo preverite vse podatke."
             hasError = true
         }
         if (username.isEmpty){
-            usernameErrorLabel.text = emptyErrorMessage
+            emailErrorLabel.text = emptyErrorMessage
             hasError = true
         }
         if (password.isEmpty){
-            passwordErrorLabel.text = emptyErrorMessage
+            emailErrorLabel.text = emptyErrorMessage
             hasError = true
         } else if (confirmPassword != password){
-            confirmPasswordErrorLabel.text = "Gesli se ne ujemata."
+            emailErrorLabel.text = "Prosimo preverite vse podatke."
             hasError = true
         }
         if (hasError){

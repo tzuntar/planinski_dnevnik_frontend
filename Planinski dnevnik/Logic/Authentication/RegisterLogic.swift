@@ -22,11 +22,8 @@ struct RegisterEntry: Encodable{
 enum RegisterError: Error, CustomStringConvertible {
     case missingData
     case serverSideError
+    case userAlreadyExists
     case unexpected(code: Int)
-    
-    //client errors bi mel
-    //case usernameExits
-    //case emailExists
 
     
     public var description: String{ // requirement od CustomStringConvertible
@@ -35,6 +32,8 @@ enum RegisterError: Error, CustomStringConvertible {
             return "Prosimo, vnesite vse podatke"
         case .serverSideError:
             return "Registracija spodletela"
+        case .userAlreadyExists:
+            return "Uporabnik s tem e-poštnim naslovom že obstaja."
         case .unexpected(_):
             return "Neznana napaka"
         }
@@ -70,10 +69,12 @@ class RegisterLogic{
         switch responseCode {
         case 500:
             delegate?.didRegisterFailWithError(RegisterError.serverSideError)
+        case 422:
+            delegate?.didRegisterFailWithError(RegisterError.userAlreadyExists)
         case 400:
             delegate?.didRegisterFailWithError(RegisterError.missingData)
         default:
-            delegate?.didRegisterFailWithError(LoginError.unexpected(code: responseCode))
+            delegate?.didRegisterFailWithError(RegisterError.unexpected(code: responseCode))
         }
     }
     
